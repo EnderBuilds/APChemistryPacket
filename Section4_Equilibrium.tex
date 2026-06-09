@@ -1,0 +1,79 @@
+\section{Equilibrium}
+Equilibrium is deeply connected to kinetics and represents the state of a system where the forward and reverse reactions occur at the same rate, resulting in no net change in the concentrations of reactants and products. As the concentrations change over time, the system will eventually reach a point where the rates of the forward and reverse reactions are equal, and the concentrations of reactants and products remain constant. This state is known as chemical equilibrium.
+
+The reason that equilibrium exists is because reactions are reversible, meaning that the products can react to form the reactants. Some reactions are more likely to proceed in one direction than the other, but eventually, the system will reach a point where the rates of the forward and reverse reactions are equal, and the concentrations of reactants and products remain constant. A common example of a reaction that is reversible is the disassociation of water:
+\[\ce{2H2O_{(l)} <=> H3O+_{(aq)} + OH-_{(aq)}}\]
+
+In order for a state to be in equilibrium, the system must be closed, meaning that no matter can enter or leave the system, or isolated, meaning that no matter or energy can enter or leave the system. The state of equilibrium is dynamic and is always a give and take trying to reach a balance. Both reactions are always occurring, but at equilibrium, they are occurring at the same rate, so there is no observable change. While catalysts do have an effect on the rate of a reaction, they do not have an effect on the equilibrium state of a reaction. Catalysts speed up both the forward and reverse reactions equally, so they do not change the position of equilibrium, but they do help the system reach equilibrium faster. There are certain catalysts that can help one direction of the reaction more than the other, but they are not common.
+
+For any reaction there is always some amount of both reactants and products, even if it is a very small amount. The amount of each is dependent on the temperature and the exact reaction. A homogeneous equilibrium is an equilibrium where all the reactants and products are in the same phase. The process of reaching equilibrium has three phases, the initial phase when the reactants are first mixed, the kinetic region where the products are being formed and the reactants are being consumed, and the equilibrium region where the concentrations of reactants and products remain constant. It is important to remember that the concentrations of reactants and products at equilibrium are not necessarily equal, but they are constant. 
+
+\subsection{Equilibrium Constant}
+The equilibrium constant, $K_{eq}$, is a measure of the relative concentrations of reactants and products at equilibrium. It is defined by the following expression for a general reaction \ce{nA + mB <=> pC + qD}:
+\begin{equation}\label{eq:Keq}
+    K_{eq} = \frac{[C]^p[D]^q}{[A]^n[B]^m}
+\end{equation}
+This expression comes from the two rate laws for the forward and reverse reactions. The value $K_{eq}$ is a constant for a given reaction at a given temperature, and tells us about the position of equilibrium. If $K_{eq}$ is greater than 1, then the equilibrium favors the products, while if $K_{eq}$ is less than 1, then the equilibrium favors the reactants. Given any temperature, $K_{eq}$ is a constant, and will not change. 
+
+The equilibrium constant for the reverse of any reaction can be expressed as the reciprocal of the equilibrium constant for the forward reaction. 
+
+\subsection{Le Chatelier's Principle}
+Le Chatelier's Principle states that if a system at equilibrium is subjected to a change in concentration, temperature, or pressure, the system will adjust itself to counteract the change and restore equilibrium. This principle can be used to predict how a system will respond to changes in conditions. Increasing concentration of a reactant or product will push the reaction to the other side. Decreasing concentration of a reactant or product will pull the reaction to the same side. To see how temperature affects equilibrium, we can treat temperature as a reactant or product. If the reaction is endothermic, then heat is a reactant, so increasing temperature will push the reaction to the products, while decreasing temperature will pull the reaction to the reactants. If the reaction is exothermic, then heat is a product, so increasing temperature will push the reaction to the reactants, while decreasing temperature will pull the reaction to the products. An increase in pressure will favor the side of the reaction with fewer moles of gas, while a decrease in pressure will favor the side of the reaction with more moles of gas. Similarly with volume, a decrease in volume will favor the side of the reaction with fewer moles of gas, while an increase in volume will favor the side of the reaction with more moles of gas. It is important to note that the changes do not come from a changing equilibrium constant, but rather from the system trying to restore equilibrium. The value of $K_{eq}$ does not change with changes in concentration, pressure, or volume.
+
+\subsection{Other Equilibrium Constants}\label{sec:other_equilibrium_constants}
+There are other equilibrium constants that are used to describe specific types of reactions. $K_{eq}$ or $K_c$ is used for general reactions using units of concentration. $K_p$ is used for reactions involving gases using units of pressure. $K_w$ is the equilibrium constant for the autoionization of water, which is equal to $1.0 \times 10^{-14}$ at 25°C. $K_{sp}$ is the solubility equilibrium constant, which is used to describe the solubility of compounds in water. $K_a$ is the acid dissociation constant, which is used to describe the strength of acids, while $K_b$ is the base dissociation constant, which is used to describe the strength of bases. The relationship between $K_a$ and $K_b$ for a conjugate acid-base pair is given by the equation $K_a \cdot K_b = K_w$.
+
+If you wish to convert between $K_c$ and $K_p$, you can use the following equation:
+\begin{equation}\label{eq:KcKp}
+    K_p = K_c(RT)^{\Delta n}
+\end{equation}
+where $R$ is the ideal gas constant, $T$ is the temperature in Kelvin, and $\Delta n$ is the change in the number of moles of gas between the reactants and products.
+
+\subsection{ICE Tables}
+ICE tables are a useful tool for solving equilibrium problems. ICE stands for Initial, Change, and Equilibrium. The initial row represents the initial concentrations of the reactants and products before the reaction starts. The change row represents the changes in concentration that occur as the reaction proceeds towards equilibrium. The equilibrium row represents the concentrations of the reactants and products at equilibrium. By using the equilibrium constant expression and the information from the ICE table, we can solve for unknown concentrations or the value of the equilibrium constant.
+
+Take for example the following reaction:
+\[\ce{CO + H2O <=> CO2 + H2}\]
+with an initial concentration of 1 M for all components and an equilibrium constant of 5.10. We can set up the following ICE table:
+\begin{center}
+    \begin{tabular}{l|c|c|c|c}
+        & \ce{CO} & \ce{H2O} & \ce{CO2} & \ce{H2} \\
+        \hline
+        I & $1.00$ & $1.00$ & $1.00$ & $1.00$ \\
+        C & & & & \\
+        E & & & & \\
+    \end{tabular}
+\end{center}
+Since $K_{eq} > 1$ we know that the reaction favors the products, so we can assume that the change in concentration of the reactants is $-x$ and the change in concentration of the products is $+x$. This gives us the following ICE table:
+\begin{center}
+    \begin{tabular}{l|c|c|c|c}
+        & \ce{CO} & \ce{H2O} & \ce{CO2} & \ce{H2} \\
+        \hline
+        I & $1.00$ & $1.00$ & $1.00$ & $1.00$ \\
+        C & $-x$ & $-x$ & $+x$ & $+x$ \\
+        E & $1.00 - x$ & $1.00 - x$ & $1.00 + x$ & $1.00 + x$ \\
+    \end{tabular}
+\end{center}
+We can then plug the equilibrium concentrations into the equilibrium constant expression to solve for $x$:
+\begin{align*}
+    K_{eq} &= \frac{[\ce{CO2}][\ce{H2}]}{[\ce{CO}][\ce{H2O}]} \\
+    5.10 &= \frac{(1.00 + x)(1.00 + x)}{(1.00 - x)(1.00 - x)} \\
+    5.10 &= \frac{(1.00 + x)^2}{(1.00 - x)^2} \\
+    \sqrt{5.10} &= \frac{1.00 + x}{1.00 - x} \\
+    1.00 + x &= \sqrt{5.10}(1.00 - x) \\
+    1.00 + x &= \sqrt{5.10} - \sqrt{5.10}x \\
+    x + \sqrt{5.10}x &= \sqrt{5.10} - 1.00 \\
+    x(1 + \sqrt{5.10}) &= \sqrt{5.10} - 1.00 \\
+    x &= \frac{\sqrt{5.10} - 1.00}{1 + \sqrt{5.10}} \\
+    x &\approx 0.387 \text{ M}
+\end{align*}
+This means that at equilibrium, the concentration of CO and H2O will be approximately 0.613 M, while the concentration of CO2 and H2 will be approximately 1.387 M.
+
+\subsubsection{x is Small Approximation}
+In some cases, the value of $x$ may be very small compared to the initial concentrations, which can make the algebraic manipulation easier. In these cases, we can make the approximation that $1.00 - x \approx 1.00$ and $1.00 + x \approx 1.00$. This happens when $K_{eq}$ is very small and the initial concentrations are relatively large. If the change in concentration is less than 5\% of the initial concentration, then the approximation is valid. 
+\subsection{The Reaction Quotient}
+The reaction quotient, $Q$, is a measure of the relative concentrations of reactants and products at any point in time, not just at equilibrium. It is defined by the same expression as the equilibrium constant, but with the concentrations at any point in time:
+\begin{equation}\label{eq:Q}
+    Q = \frac{[C]^p[D]^q}{[A]^n[B]^m}
+\end{equation}
+By comparing the value of $Q$ to the value of $K_{eq}$, we can predict the direction in which the reaction will proceed to reach equilibrium. If $Q < K_{eq}$, then the reaction will proceed in the forward direction to produce more products. If $Q > K_{eq}$, then the reaction will proceed in the reverse direction to produce more reactants. If $Q = K_{eq}$, then the system is already at equilibrium and there will be no net change in concentrations.

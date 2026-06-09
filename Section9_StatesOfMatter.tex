@@ -1,0 +1,399 @@
+\section{States of Matter}
+Matter has several phases, or states where particles exhibit a distinct set of properties. The three main phases of matter, in order of increasing entropy, are solids, liquids, and gases. These three, in addition to aqueous solutions, are the states of matter that are required for the AP exam. Another state of matter that is worth mentioning is plasma, which is a highly ionized gas that exists at extremely high temperatures, such as in stars. 
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[arrow/.style={->,thick,mydarkblue,shorten <=2,shorten >=2},
+                            box/.style={thick,rounded corners=4,inner xsep=6,inner ysep=3}]
+        \message{Phase transitions^^J}
+        
+        \node[blue!10!white,draw=mydarkblue,fill=blue!50!gray!80!black,box] (S) at (-2.4,0) {\strut solid};
+        \node[blue!10!white,draw=mydarkblue,fill=blue!80!white,box] (L) at (2.4,0) {\strut liquid};
+        \node[blue!20!black,draw=mydarkblue,fill=blue!20!white,box] (G) at (0,2) {\strut gas};
+        
+        \draw[arrow,->] (S.8) -- (L.173) node[above,midway,scale=0.9] {melt};
+        \draw[arrow,->] (L.-173) -- (S.-8) node[below=-1pt,midway,scale=0.9] {fuse};
+        
+        \draw[arrow,->] (S.115) -- (G.-190) node[left=2pt,above,midway,sloped,scale=0.9] {sublimation};
+        \draw[arrow,->] (G.-160) -- (S.70) node[left=-2pt,below=-1pt,midway,sloped,scale=0.9] {deposition};
+        
+        \draw[arrow,->] (L.65) -- (G.10) node[left=2pt,above,midway,sloped,scale=0.9] {evaporate};
+        \draw[arrow,->] (G.-20) -- (L.110) node[left=2pt,below=-1pt,midway,sloped,scale=0.9] {condensate};
+        
+    \end{tikzpicture}
+    \caption{Phase transitions between solids, liquids, and gases.}
+    \label{fig:phase_transitions}
+\end{figure}
+There are several terms that should be mentioned relating to the process of changing states of matter. The process of changing from a solid to a liquid is called melting, while the reverse process is called freezing. The process of changing from a liquid to a gas is called vaporization, while the reverse process is called condensation. The process of changing directly from a solid to a gas is called sublimation, while the reverse process is called deposition.
+\subsection{Phase Diagrams}
+A phase diagram is a graphical representation of the different phases of a substance as a function of temperature and pressure. The phase diagram of a substance shows the conditions under which the substance exists as a solid, liquid, or gas. The lines on the phase diagram represent the conditions under which two phases coexist in equilibrium, at which point is the phase change occurs. 
+\begin{figure}[ht]
+    \centering
+
+    \begin{tikzpicture}[scale=0.4]
+        \message{Phase diagrams^^J}
+        
+        \def\xtick#1#2{\draw[thick] (#1)++(0,.2) --++ (0,-.4) node[below=-.5pt,scale=0.7] {#2};}
+        \def\ytick#1#2{\draw[thick] (#1)++(.2,0) --++ (-.4,0) node[left=-.5pt,scale=0.7] {#2};}
+        
+        % COORDINATES
+        \coordinate (O) at (0,0);
+        \coordinate (N1) at (2,10);
+        \coordinate (N2) at (11,10);
+        \coordinate (NE) at (12,10);
+        \coordinate (NW) at (0,10);
+        \coordinate (SE) at (12,0);
+        \coordinate (W) at (0,5);
+        \coordinate (S) at (6,0);
+        \coordinate (C) at (10.2,7.8); % critical
+        \coordinate (T) at (4,3); % triple
+        
+        % PATHS
+        \def\SL{(T) -- (N1)}
+        \def\SG{(O) to[out=20,in=-120] (T)}
+        \def\LG{(T) to[out=20,in=-120] (C)}
+        \def\atm{(0,5.5) -- (12,5.5)}
+        \path[name path=SL] \SL;
+        \path[name path=LG] \LG;
+        \path[name path=atm] \atm;
+        
+        % REGIONS
+        \fill[mylightblue] \SG -- (N1) -- (NW) -- cycle;
+        \fill[blue!5] \LG -- (N2) -- (N1) -- cycle;
+        \fill[mylightred] \LG -- (N2) -- (NE) -- (SE) -- \SG -- cycle;
+        \node at (1.5,4.2) {solid};
+        \node at (7,2.2) {gas};
+        \node at (6,6.6) {liquid};
+        
+        %% MIXED
+        %\shade[top color=mylightblue,bottom color=mylightred,shading angle=70]
+        %  (10.4,7.7) -- (11.2,10) -- (10.8,10) -- (10.0,7.7) -- cycle;
+        
+        % POINTS
+        \fill[black,name intersections={of=SL and atm,by=M}] (M) circle (4pt);
+        \fill[black,name intersections={of=LG and atm,by=B}] (B) circle (4pt);
+        \fill (T) circle (4pt) node[below right,scale=0.6,align=right] {triple\\[-2pt]point};
+        \fill (C) circle (4pt) node[above=1pt,scale=0.6,align=center] {critical\\[-2pt]point};
+        
+        % LINES
+        \draw[thick] \SG;
+        \draw[thick] \LG;
+        \draw[thick] \SL;
+        \draw[dashed] (M) -- ($(M |- 0,0)$) coordinate (Mx);
+        \draw[dashed] (T) -- ($(T |- 0,0)$) coordinate (Tx);
+        \draw[dashed] (T) -- ($(T -| 0,0)$) coordinate (Ty);
+        \draw[dashed] (B) -- ($(B |- 0,0)$) coordinate (Bx);
+        \draw[dashed] (B) -- ($(B -| 0,0)$) coordinate (By);
+        \draw[dashed] (C) -- ($(C |- 0,0)$) coordinate (Cx);
+        \draw[dashed] (C) -- ($(C -| 0,0)$) coordinate (Cy);
+        
+        % AXES
+        \draw[thick] (O) rectangle (NE);
+        \node[left=17pt,above,rotate=90] at (W) {$P$ [atm]};
+        \node[below=9pt] at (S) {$T$ [\si{\degree C}]};
+        \xtick{Mx}{\hspace{-2pt}0}
+        \xtick{Tx}{\hspace{9pt}0.01}
+        \ytick{Ty}{0.006}
+        \xtick{Bx}{100}
+        \ytick{By}{1}
+        \xtick{Cx}{374}
+        \ytick{Cy}{218}
+        
+    \end{tikzpicture}
+    \caption{Phase diagram of water.}
+    \label{fig:phase_diagram}
+\end{figure}
+The point where all three phases coexist in equilibrium is called the triple point, and the point where the liquid and gas phases become indistinguishable is called the critical point. The curve between liquids and gases is called the vapor-pressure curve, and the curve between solids and liquids is called the melting curve. The normal melting point and normal boiling point of a substance are the points on the phase diagram where the melting curve and vapor-pressure curve intersect with the line of 1 atm pressure, respectively.
+\subsection{Gases}
+Gasses are the most entropic phase of matter and are characterized by their low density, little intermolecular attraction between particles, connection with pressure, and their higher potential energy. These properties allow gases to assume both the volume and shape of their container, and to be easily compressed. They flow easily and diffuse quickly. 
+\subsubsection{Pressure}
+An important topic to discuss in relationship to gases is pressure. Pressure is defined as the amount of force per unit of area.
+\begin{equation}\label{eq:pressure}
+    P = \frac{F}{A}
+\end{equation}
+The pressure we experience on Earth is caused by the weight of the air above us. In the context of gases, pressure is caused by the collisions of gas particles between the walls and each other. The more collisions there are, the higher the pressure. 
+
+We can measure pressure using tools such as a barometer, which measures atmospheric pressure, and a manometer, which is used to compare the unknown pressure of a gas to a known pressure, such as atmospheric pressure. Both of these tools work by measuring the height of a column of a liquid, usually mercury, that is supported by the pressure of the gas. The height of the column is directly proportional to the pressure of the gas. 
+
+There are many units of pressure, but the most common ones are atmospheres (atm), millimeters of mercury (mmHg), and pascals (Pa). The standard SI unit of pressure is the pascal, and is defined as one newton per square meter. Usually, a pascal is too small to be used in real world problems, and instead kilopascals (kPa) or bars are used. Where 1 kPa is equal to 1000 Pa, and 1 bar is equal to 100 kPa. Millimeters of mercury, sometimes called torr, is a unit of pressure that is based on the height of a column of mercury that is supported by the pressure of the gas. This is an older unit that originally came from the use of mercury barometers, but is still commonly used today. Atmospheres is a unit of pressure that is based on the average atmospheric pressure at sea level, which is approximately 101.325 kPa or 760 mmHg.
+\subsubsection{Standard Temperature and Pressure}
+Standard temperature and pressure (STP) is a set of conditions that are commonly used in gas law problems. STP is defined as a temperature of 0\textdegree C (273.15 K) and a pressure of 1 atm (101.325 kPa or 760 mmHg). These conditions are different from the standard conditions used in thermodynamics problems.
+\subsubsection{Gas Laws}
+Gas laws are mathematical relationships that describe the interaction between four variables of a gas: pressure, volume, temperature, and number of moles. These laws apply to all ideal gases and tell us how gases behave. The relationships between these variables all have different names based on the variables involved, and in many cases the scientist who discovered the relationship. 
+The first gas law is Boyle's Law, which describes the relationship between pressure and volume.
+\begin{equation}\label{eq:boyle}
+    P \propto \frac{1}{V}
+\end{equation}
+The next gas law is Charles's Law, which describes the relationship between volume and temperature.
+\begin{equation}\label{eq:charles}
+    V \propto T
+\end{equation}
+The next gas law is Gay-Lussac's Law, which describes the relationship between pressure and temperature.
+\begin{equation}\label{eq:gaylussac}
+    P \propto T
+\end{equation}
+The next gas law is Avogadro's Law, which describes the relationship between volume and number of moles.
+\begin{equation}\label{eq:avogadro}
+    V \propto n
+\end{equation}
+Combining Boyle's Law, Charles's Law, and Gay-Lussac's Law gives us the Combined Gas Law, which describes the relationship between pressure, volume, and temperature.
+\begin{equation}\label{eq:combined}
+    \frac{PV}{T} = k
+\end{equation}
+Where $k$ is a constant. 
+Finally, combining the Combined Gas Law with Avogadro's Law gives us the Ideal Gas Law, which describes the relationship between pressure, volume, temperature, and number of moles.
+\begin{equation}\label{eq:ideal}
+    PV = nRT
+\end{equation}
+Where $R$ is the ideal gas constant, which has a value of $0.0821 \, \text{L·atm·K}^{-1}\text{·mol}^{-1}$. This constant also appears in some thermodynamics equations, such as the conversion between Gibbs free energy and the equilibrium constant \eqref{eq:free_energy_equilibrium}, in which case we use the value of $R$ in joules per mole per kelvin, which is $8.314 \, \text{J·K}^{-1}\text{·mol}^{-1}$.
+Using this equation, we can rearrange the variables to relate the molar mass of a gas to its density, pressure, and temperature.
+\begin{equation}\label{eq:molar_mass}
+    M = \frac{\rho RT}{P}
+\end{equation}
+Where $\rho$ is the density of the gas. 
+In addition to the ideal gas law, another law of gases is Dalton's Law of Partial Pressures, which states that the total pressure of a gas mixture is equal to the sum of the partial pressures of each individual gas in the mixture.
+\begin{equation}\label{eq:dalton}
+    P_{total} = P_1 + P_2 + \dots + P_n
+\end{equation}
+Where $P_{total}$ is the total pressure of the gas mixture, and $P_1$, $P_2$, ..., $P_n$ are the partial pressures of each individual gas in the mixture. 
+\subsubsection{Mole Fraction}
+The mole fraction of a gas is the ratio of the number of moles of that gas to the total number of moles of all gases in the mixture. Using the mole fraction, we can relate the partial pressure of a gas to its mole fraction and the total pressure of the gas mixture. This can also be used along with Dalton's Law of Partial Pressures to convert between the mole fraction of a gas and its partial pressure.
+\subsubsection{Real Gases}
+The main gas laws assume that gases behave ideally, assuming that atoms or molecules do not take up space, interact with each other, and that kinetic energy is directly proportional to temperature. In reality, this is not the case as real gases do exhibit these properties. The ideal gas law is a good approximation for real gases at low pressures and high temperatures, where the particles are far apart and have little interaction with each other. However, at high pressures and low temperatures, the ideal gas law breaks down. A correction for these properties is given by the Van der Waals equation, which is a modified version of the ideal gas law that takes into account the volume of the gas particles and the intermolecular forces between them. The Van der Waals equation is given by:
+\begin{equation}\label{eq:vanderwaals}
+    \left(P + \frac{an^2}{V^2}\right)(V - nb) = nRT
+\end{equation}
+Where $a$ is a measure of the strength of the intermolecular forces between the gas particles, and $b$ is a measure of the volume of the gas particles. The values of $a$ and $b$ are specific to each gas and can be found in tables.
+\subsubsection{Effusion and Diffusion}
+Effusion is the process of a gas passing through a tiny opening, while diffusion is the process of a gas spreading out and mixing with other gases. The rate of effusion and diffusion of a gas is related to its molar mass, with lighter gases effusing and diffusing faster than heavier gases.
+This relationship is given by Graham's Law, which states that the rate of effusion or diffusion of a gas is inversely proportional to the square root of its molar mass.
+\begin{equation}\label{eq:graham}
+    \frac{r_1}{r_2} = \sqrt{\frac{M_2}{M_1}}
+\end{equation}
+Where $r_1$ and $r_2$ are the rates of effusion or diffusion of gases 1 and 2, and $M_1$ and $M_2$ are the molar masses of gases 1 and 2. This equation is not required for calculations on the AP exam, but its concept is required.
+\subsection{Liquids}
+Liquids are the middle ground between solids and gases, where intermolecular forces are strong enough to hold the particles together, but not strong enough to keep them in a fixed position. This phase is relatively rare in reality as most substances exist as either solids or gases at room temperature, but has a lot of interesting properties. Water is one of the most common liquids and has many unique properties that are important to understand in chemistry. 
+
+Compared to gases which are $>99\%$ empty space, or solids which are $<0.1\%$ empty space, liquids are in the middle with about $10\%$ empty space. They are able to assume the shape of their container, but have a fixed volume. They are relatively incompressible, and flow easily similarly to gases. Both liquids and gases are fluids, which means they can flow and take the shape of their container. 
+\subsubsection{Intermolecular Forces}
+The second law of thermodynamics states that the entropy of the universe always increases, which means that systems will naturally tend towards disorder. This would suggest that all mater should exist as a gas, which is the most entropic phase of matter. However, this is not the case as there are intermolecular forces that hold particles together and prevent them from existing as a gas. 
+
+Intramolecular forces are the forces that hold atoms together within a molecule, the chemical bonds that make up molecules. Intermolecular forces are the forces that hold molecules together, and are responsible for the properties of liquids and solids. Compared to intramolecular forces, intermolecular forces are much weaker, but they are still strong enough to hold molecules together and prevent them from existing as a gas. Where intramolecular forces affect the chemical properties of a substance, intermolecular forces affect the physical properties of a substance, such as its boiling point, melting point, vapor pressure, and viscosity. In equation \eqref{eq:vanderwaals}, we included a term to account for the intermolecular forces between gas particles, which is the $an^2/V^2$ term. 
+
+There are four main types of intermolecular forces: Ion-dipole forces, dipole-dipole forces, hydrogen bonding, and London dispersion forces. Van der Waals forces is a term that is used to refer to the final three types of intermolecular forces.
+\subsubsection{Ion-Dipole Forces}
+Ion-dipole forces are the strongest of the four, and occur between an ion and a polar molecule. This force comes from the electrostatic attraction between the charged ion and the partial charges on the polar molecule. 
+
+This is most commonly seen in aqueous solutions, where the positive and negative ions of a solute are attracted to the partial charges on the water molecules. 
+
+These forces are the strongest of the four.
+
+\subsubsection{Dipole-Dipole Forces}
+Dipole-dipole forces occur between two polar molecules, and come from the electrostatic attraction between the partial positive charge on one molecule and the partial negative charge on the other molecule. 
+
+
+\subsubsection{Hydrogen Bonding}
+Hydrogen bonding is a special type of dipole-dipole force that occurs when a hydrogen atom is bonded to a highly electronegative atom, such as nitrogen, oxygen, or fluorine. This creates a strong dipole moment, and the hydrogen atom can form a strong attraction with the lone pair of electrons on another molecule. These bonds are stronger than regular dipole-dipole forces, but still weaker than ion-dipole forces.
+There increased strength in comparison to regular dipole-dipole forces comes from the very small size of the hydrogen atom, which allows it to get very close to the electronegative atom and form a strong attraction. 
+
+The presence of hydrogen bonding in water is responsible for many of its unique properties, such as its high boiling point, high specific heat capacity, and high surface tension. 
+\subsubsection{London Dispersion Forces}
+London dispersion forces are the weakest of the four, and occur between all molecules, whether they are polar or nonpolar. These forces come from uneven arrangements of electrons around a molecule, which creates temporary dipoles that can induce dipoles in neighboring molecules. The strength of London dispersion forces increases with the size of the molecule, as larger molecules have more electrons and a greater surface area for interactions.
+\subsubsection{IMF and Boiling Point}
+The more intermolecular forces a substance has, the higher its boiling point will be. This is because more energy is required to overcome the intermolecular forces and convert the substance from a liquid to a gas. This is why the boiling point of the alkanes increases as the number of carbons increases, as the larger alkanes have more electrons and a greater surface area for London dispersion forces to occur. This is also why water has a much higher boiling point than other molecules of similar size, as it has strong hydrogen bonding in addition to London dispersion forces.
+\subsubsection{Vapor Pressure}
+Vapor pressure is the pressure exerted by the gas released by a liquid when it is in equilibrium with its vapor. Both evaporation and condensation occur at the surface of a liquid, and when the rate of evaporation equals the rate of condensation, the system is in dynamic equilibrium. At this point, the pressure exerted by the gas released by the liquid is called the vapor pressure. The vapor pressure of a liquid depends on the strength of the intermolecular forces in the liquid, and the temperature of the liquid. The relationship between vapor pressure and temperature is given by the Clausius-Clapeyron equation, which describes how the vapor pressure of a liquid changes with temperature.
+\begin{equation}\label{eq:clausius}
+    \ln P = -\frac{\Delta H_{vap}}{RT} + C
+\end{equation}
+Where $P$ is the vapor pressure and $\Delta H_{vap}$ is the enthalpy of vaporization.
+This equation can be rearranged to showcase the change in vapor pressure with a change in temperature.
+\begin{equation}\label{eq:clausius_rearranged}
+    \ln \frac{P_2}{P_1} = -\frac{\Delta H_{vap}}{R}\left(\frac{1}{T_2} - \frac{1}{T_1}\right)
+\end{equation}
+
+The reason that such an equilibrium exists is because the particles at the surface of a liquid have enough energy to overcome the intermolecular forces and escape into the gas phase, which can be seen in the Maxwell-Boltzmann distribution of particle energies (\ref{fig:MaxwellBoltzmann}), where the particles with the highest energies are able to escape the liquid and become a gas. We can also represent a phase change as a reaction, which has its own equilibrium constant, which is related to the pressure of the gas released by the liquid. 
+\subsubsection{Viscosity}
+Viscosity is a measure of a liquid's resistance to flow. It is determined by the strength of the intermolecular forces in the liquid, as well as the size and shape of the molecules.
+\subsubsection{Surface Tension}
+The surfaces of liquids are stronger and have more tension than the rest of the liquid, which is caused by the imbalance of intermolecular forces at the surface. This surface tension allows liquids to form droplets and to resist external forces, such as gravity. 
+\subsubsection{Capillary Action}
+Capillary action is the ability of a liquid to flow in narrow spaces without the assistance of external forces. This is caused by the combination of cohesive forces between the liquid molecules and adhesive forces between the liquid molecules and the surface of the narrow space. This is why water can climb up a thin tube.
+\subsubsection{Water and its Unique Properties}
+Water has several unique properties due to its hydrogen bonding, including a high specific heat capacity, high heat of vaporization, and the ability to dissolve many substances. These properties are essential for life and influence many natural processes. Its properties allow it to be one of the best solvents, as it can dissolve a wide variety of substances, including ionic compounds and polar molecules. 
+\subsubsection{Liquid Crystals}
+Liquid crystals are a state of matter that has properties of both liquids and solids. They have an ordered structure like solids, but can flow like liquids. They are used in many applications, such as in computer screens and displays. Nematic liquid crystals have molecules that are oriented in the same direction, while smectic liquid crystals have molecules that are arranged in layers. Cholesteric liquid crystals have molecules that are arranged in a helical pattern.
+\subsection{Solids}
+Having the least amount of entropy, solids are the most ordered phase of matter. They have strong intramolecular and intermolecular forces that hold the particles together in a fixed position, giving solids a definite shape and volume. Even with this rigid structure they still have small vibrations of the particles. They tend to form either crystalline or amorphous structures, where crystalline solids have a regular repeating pattern of particles, while amorphous solids do not have a regular pattern. 
+\subsubsection{Amorphous Solids}
+Solids such as glass, rubber, and plastic all lack a regular repeating pattern of particles, and are classified as amorphous solids. Consequently, their structures are not as rigid, and no internal geometry. They have comparatively lower IMFs compared to crystalline solids.
+\subsubsection{Crystalline Solids}
+Crystalline solids have a regular repeating pattern of particles, and have four main types: ionic, covalent network, metallic, and molecular. 
+
+In ionic solids, the unit particles are positive and negative ions that are held together by electrostatic attraction. These solids are hard and brittle, have high melting points, and are poor conductors of heat and electricity. Salts (\ce{NaCl} or \ce{Ca(NO3)2}) and other ionic compounds are examples of ionic solids.
+
+In covalent network solids, the unit particles are atoms connected by a network of covalent bonds which hold the particles together. They are very hard, have very high melting points, and are often poor conductors of heat and electricity. Diamond (\ce{C}) and quartz (\ce{SiO2}) are examples of covalent network solids. Covalent network solids can also be further classified into two dimensional solids and three dimensional solids. 
+
+Metallic solids have a lattice of metal atoms connect with metallic bonds. The demoralized electrons cause metallic solids to be very good conductors of heat and electricity, and they are malleable and ductile. Their hardness and melting points can vary widely. Examples of metallic solids include iron (\ce{Fe}), copper (\ce{Cu}), and aluminum (\ce{Al}).
+
+Molecular solids have atoms or molecules as their unit particles, which are held together by intermolecular forces. They are generally soft, have low to moderate melting points, and are poor conductors of heat and electricity. Examples include sugar (\ce{C12H22O11}), or dry ice (\ce{CO2}). Molecular solids can also be further classified into polar, nonpolar, and hydrogen bonding solids, based on the types of intermolecular forces that hold the particles together.
+\subsubsection{Crystal Lattices and Unit Cells}
+A crystal lattice is a three-dimensional arrangement of atoms, ions, or molecules in a crystalline solid. The unit cell of a lattice is the smallest repeating unit that shows the entire structure's symmetry and properties. There are seven main types of crystal lattices: cubic, tetragonal, orthorhombic, rhombohedral, hexagonal, monoclinic, and triclinic. The only one relevant to the AP exam is the cubic lattice, which has three subtypes: simple cubic, body-centered cubic, and face-centered cubic. 
+\begin{figure*}[ht]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \begin{tikzpicture}[isometric view,rotate around z=180,line cap=round,line join=round]
+           \def\a{3} % edge length
+            \pgfmathsetmacro\r{0.5*\a} % sphere radius
+            % background
+            \foreach\i in {0,120,240}
+            \draw[rotate=\i,my ball] (\a,0,0) --++ (0,\r,0) arc (90:135:\r) arc (0:60:\r cm)
+                {[canvas is xz plane at y=0] arc (135:90:\r)} -- cycle;
+            % foreground
+            \foreach\i in {0,120,240}
+            \draw[rotate=\i,my ball] (\a,\a,0) --++ (60:\r cm) arc (60:120:\r cm) -- cycle;
+            % section planes
+            \foreach\s in {xy,xz,yz} \foreach\i in {1,...,4}
+            \draw[\s,rotate=90*\i] (45:{\a*sin(45)}) --++ (180:\r) arc (180:270:\r) -- cycle;
+        \end{tikzpicture}
+        \caption{Simple cubic unit cell.}
+        \label{fig:simple_cubic}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \begin{tikzpicture}[isometric view,rotate around z=180,line cap=round,line join=round]
+            \def\a{3} % edge length
+            \pgfmathsetmacro\r{0.25*sqrt(3)*\a} % sphere radius
+            % background
+            \foreach\i in {0,120,240}
+            \draw[rotate=\i,my ball] (\a,0,0) --++ (0,\r,0) arc (90:135:\r) arc (0:60:\r cm)
+                {[canvas is xz plane at y=0] arc (135:90:\r)} -- cycle;
+            % sphere (center)
+            \draw[my ball]  (0.5*\a,0.5*\a,0.5*\a) circle (\r cm);
+            % foreground
+            \foreach\i in {0,120,240}
+            \draw[rotate=\i,my ball] (\a,\a,0) --++ (60:\r cm) arc (60:120:\r cm) -- cycle;
+            % section planes
+            \foreach\s in {xy,xz,yz} \foreach\i in {1,...,4}
+            \draw[\s,rotate=90*\i] (45:{\a*sin(45)}) --++ (180:\r) arc (180:270:\r) -- cycle;
+        \end{tikzpicture}
+        \caption{Body-centered cubic unit cell.}
+        \label{fig:body_centered_cubic}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \begin{tikzpicture}[isometric view,rotate around z=180,line cap=round,line join=round]
+                    \def\a{3} % edge length
+                    \pgfmathsetmacro\r{0.25*sqrt(2)*\a} % sphere radius
+                    % background
+                    \foreach\i in {0,120,240}
+                    \draw[rotate=\i,my ball] (\a,0,0) --++ (0,\r,0) arc (90:135:\r) arc (0:60:\r cm)
+                        {[canvas is xz plane at y=0] arc (135:90:\r)} -- cycle;
+                    % foreground
+                    \foreach\i in {0,120,240}
+                    \draw[rotate=\i,my ball] (\a,\a,0) --++ (60:\r cm) arc (60:120:\r cm) -- cycle;
+                    \foreach\i in {0,120,240}{
+                    \begin{scope}[rotate=\i]
+                    \clip (0.5*\a,0,0) --++ (0,-\r,\r) -- (-0.5*\a,0.5*\a,0.5*\a) -- (0.5*\a,0.5*\a,-0.5*\a);
+                    \draw[my ball] (0.5*\a,0,0) circle (\r cm);
+                    \end{scope}}
+                    % section planes
+                    \foreach\s in {xy,xz,yz} \foreach\i in {1,...,4}
+                    \draw[\s,rotate=90*\i] (45:{\a*sin(45)}) --++ (180:\r) arc (180:270:\r) -- cycle;
+                    \foreach\s in {xy,xz,yz}
+                    \draw[\s] (0,0) circle (\r cm);
+        \end{tikzpicture}
+        \caption{Face-centered cubic unit cell.}
+        \label{fig:face_centered_cubic}
+    \end{subfigure}
+    \caption{The three types of cubic unit cells.}
+    \label{fig:cubic_unit_cells}
+\end{figure*}
+In the simple cubic there is one atom at each corner of the cube, and the atoms touch each other along the edges of the cube. There is a total of one atom in the entire unit cell, as each corner only contains one-eigth of an atom as seen in figure \ref{fig:simple_cubic}.
+
+In a body-centered cubic, there is one atom at each corner of the cube and one atom in the center of the cube. This results in a total of two atoms per unit cell, with one atom in the center, and another distributed among the eight corners as seen in figure \ref{fig:body_centered_cubic}.
+
+A face-centered cubic has one atom at each corner of the cube and one atom in the center of each face of the cube. This results in a total of four atoms per unit cell, with three atoms distributed among the six faces, and one atom distributed among the eight corners as seen in figure \ref{fig:face_centered_cubic}.
+\subsubsection{Ionic Solids Unit Cells}
+When making unit cells for ionic solids, there are two equivelent methods, larger ions at the corners or smaller ions at the corners. In both the cation to anion ratio is the same for the crystal as for the molecular formula. In \ce{NaCl}, the chloride ions make a face-centered cubic while the smaller sodium ions fill in the gaps between the chloride ions. 
+\subsubsection{Metal Alloys}
+An alloy is a solid homogeneous mixture of two or more elements to gain specific properties. There are two main types of alloys: substitutional alloys and interstitial alloys. In a substitutional alloy, an atom of a similar size to the solvent atom is used to replace some of the solvent atom in the lattice structure. Bronze is an example of a substitutional alloy, which is made by replacing some of the copper atoms with tin atoms. In an interstitial alloy, smaller atoms are used to fill in the gaps between the solvent atoms in the lattice structure. Steel is an example of an interstitial alloy, which is made by filling in the gaps between iron atoms with carbon atoms. 
+\subsubsection{Allotropes}
+Allotropes are different forms of the same element that have different physical properties. Some elements like carbon can exist in multiple forms, such as diamond, graphite, and graphene. These different forms of carbon have different physical properties due to their different structures.
+\subsubsection{Semiconductors}
+Semiconductors are materials that have electrical conductivity between that of a conductor and an insulator. They are used in many electronic devices and are made through a process called dopeing where elements such as silicon or germanium are mixed with small amounts of other elements to change the conductivity. n-type semiconductors have more conductivity and p-type semiconductors have less conductivity. When you combine n-type and p-type semiconductors, you get a p-n junction, which is the basis for many electronic devices such as diodes and transistors.
+\subsubsection{Foam}
+Foam is a type of solid that is made up of a large number of gas bubbles trapped in a liquid or solid matrix. The process of making a foam starts with an emulsion, where monomers are a fuid, before foaming agents are added to create the gas bubbles. The foam is then solidified through a process called polymerization and you get a polymer foam. 
+\subsection{Solutions}
+Solutions are evenly distributed mixtures of substances that can not be easily separated. They are essential to many chemical reactions and processes. In all solutions there are one or more solutes dissolved in a solvent. These solutes can not be filtered out of the solvent but can be distilled using the different boiling points of substances. Solutes always stay mixed in a solvent and particles are always in motion. The solution has different properties than the solvent does alone which is why solutions are useful for reactions. Volumes of solutions are not always additive as the solute can fit into the spaces between the solvent particles. There are nine types of solution based on the phases of the solvent and solute. 
+\begin{table}[ht]
+    \centering
+    \begin{tabularx}{\columnwidth}{|c|c|X|}
+        \hline
+        \textbf{Solvent} & \textbf{Solute} & \textbf{Example} \\
+        \hline
+        Gas & Gas & Air (Oxygen dissolved in Nitrogen)\\
+        Gas & Liquid & Water vapor in air\\
+        Gas & Solid & Particulates such as dust in air\\
+        Liquid & Gas & Carbonated water (CO2 dissolved in water)\\
+        Liquid & Liquid & Gasoline (a mixture of hydrocarbons)\\
+        Liquid & Solid & Saltwater (NaCl dissolved in water)\\
+        Solid & Gas & Hydrogen in palladium\\
+        Solid & Liquid & Amalgam (Mercury dissolved in another metal)\\
+        Solid & Solid & Alloys such as bronze (tin dissolved in copper)\\
+        \hline
+    \end{tabularx}
+    \caption{Examples of solutions based on the phases of the solvent and solute.}
+    \label{tab:solution_types}
+\end{table}
+\subsubsection{Solubility}
+The main rule that most solutions follow when it comes to solubility is "like dissolves like," that is, polar solvents are able to dissolve polar solutes and non-polar solvents are able to dissolve non-polar solutes. The closer the polarities of the solvent and solute, the better the solubility. Conversely, substances with different polarities tend to not dissolve well. There are of course exceptions to this rule. We call substances that can dissolve in each other miscible, and substances that can not dissolve in each other immiscible.
+
+Solubility itself is the maximum amount of a solute that can be dissolved in a solvent. This is typically represented in units of g/100mL for solids in liquids and mg/L for gases. The solubility of a substance can be affected by several factors. In order of decreasing importance they are polarity, materials, temperature, and pressure. If the solubility of a substance is very low we call it insoluble. 
+
+We can represent the solubility of a substance at different temperatures using a solubility curve. 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{solubility-curve-solid.png}
+    \caption{Solubility curve of \ce{NaNO3}, \ce{CaCl2}, \ce{Pb(NO3)2}, \ce{NaCl}, \ce{KCl}, \ce{K2Cr2O7}, \ce{KClO3}, and \ce{Ce2(SO4)3} in water.}
+    \label{fig:solubility_curve}
+\end{figure}
+
+A solution is saturated when it contains the maximum amount of solute that can be dissolved in the solvent at a given temperature, or it lies on the solubility curve. A solution is unsaturated when it contains less than the maximum amount of solute that can be dissolved in the solvent at a given temperature, or it lies below the solubility curve. A solution is supersaturated when it contains more than the maximum amount of solute that can be dissolved in the solvent at a given temperature, or it lies above the solubility curve. 
+\subsubsection{Concentration}
+Some methods of measuring the concentration of a solution include molarity, molality, normality, mole fraction, and percent by mass. Molarity is the number of moles of solute per liter of solution, and is represented by the symbol $M$. Molality is the number of moles of solute per kilogram of solvent, and is represented by the symbol $m$. Normality is the number of equivalents of solute per liter of solution, and is represented by the symbol $N$. Mole fraction is the ratio of the number of moles of solute to the total number of moles of all substances in the solution, and is represented by the symbol $\chi$. Percent by mass is the mass of solute divided by the total mass of the solution, multiplied by 100\%. 
+\subsubsection{Energy of Solutions}
+In order to dissolve a substance, the lattice energy (the energy required to break the intermolecular forces between the particles of the solute) must be overcome. This comes from the interactions between the solute and solvent particles. There are three particle interactions to consider: solute-solute interactions, solvent-solvent interactions, and solute-solvent interactions. In order for a substance to dissolve, the solute-solvent interactions must be stronger than the combined energy of the solute-solute interactions and solvent-solvent interactions. The energy change of a solution can be either endothermic or exothermic, depending on the relative strengths of these interactions. Usually the heat of solution is denoted as
+\begin{equation}\label{eq:heat_of_solution}
+    \Delta H_{solution} = \Delta H_1 + \Delta H_2 + \Delta H_3
+\end{equation}
+Where $\Delta H_1$ is the energy change associated with breaking the solute-solute interactions, $\Delta H_2$ is the energy change associated with breaking the solvent-solvent interactions, and $\Delta H_3$ is the energy change associated with forming the solute-solvent interactions.
+
+$\Delta H_1$ and $\Delta H_2$ are always positive or endothermic as energy is required to break the intermolecular forces between the particles of the solute and solvent. $\Delta H_3$ is always negative or exothermic as energy is released when the solute-solvent interactions are formed. Solutions form when $\Delta H_{solution}$ is relatively low, which occurs when there are relatively weak forces between the particles of the solute and solvent, and between the particles of the solute and solvent such as in nonpolar substances, or when there are relatively strong forces between the particles of the solute and solvent such as in polar substances.
+\subsubsection{Pressure and Gas Solubility}
+The solubility of a gas in a liquid is directly proportional to the pressure of the gas above the liquid, which is given by Henry's Law. 
+\begin{equation}\label{eq:henry}
+    C = kP
+\end{equation}
+Where $C$ is the concentration of the gas in the liquid, $k$ is the Henry's Law constant, and $P$ is the partial pressure of the gas above the liquid. At higher pressures, more gas molecules collide with the liquid and are able to dissolve into the liquid, increasing the solubility of the gas. 
+\subsubsection{Seperation Techniques}
+There are several methods of separating the components of a solution based on different properties. The most common include Absorption, Centrifugation, Chromatography, Crystallization, Distillation, Electrolysis, Filtration, and Magnetic Separation. 
+\begin{table*}[hbt]
+    \centering
+    \begin{tabularx}{\textwidth}{|c|c|X| }
+        \hline
+        \textbf{Method} & \textbf{Property Used} & \textbf{Mechanism} \\
+        \hline
+        Absorption & Surface Attraction &  Tiny particles get stuck to the surface of another material.\\
+        Centrifugation & Density &  Spinning a mixture at high speeds causes the denser particles to move outward and separate from the less dense particles.\\
+        Chromatography & Polarity/Surface Attraction &  A mixture is passed through a stationary phase, and the components are separated based on their interactions with the stationary phase.\\
+        Crystallization & Solubility &  A solution is cooled or evaporated to allow the solute to form crystals, which can be separated from the solvent.\\
+        Distillation & Boiling Point &  A mixture is heated to separate components based on their different boiling points. The component with the lower boiling point vaporizes first and can be collected separately.\\
+        Electrolysis & Chemical Change &  An electric current is passed through a solution to cause a chemical change that separates the components.\\
+        Filtration & Particle Size &  A mixture is passed through a filter that allows smaller particles to pass through while retaining larger particles.\\
+        Magnetic Separation & Magnetism &  A magnetic field is used to separate magnetic materials from non-magnetic materials.\\
+        \hline
+    \end{tabularx}
+    \caption{Separation techniques based on different properties.}
+    \label{tab:separation_techniques}
+\end{table*}

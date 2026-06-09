@@ -1,0 +1,379 @@
+\section{Aqueous}
+Aqueous is the study of reactions in water. The properties of water allow for certain reactions to occur that would not occur otherwise. Acid base reactions are especially key to aqueous. 
+
+\subsection{Definitions of Acids and Bases}
+\subsubsection{Arrhenius}
+The Arrhenius definition of acids and bases is the most basic. It states that an acid is a substance that increases the concentration of hydrogen ions in solution, while a base is a substance that increases the concentration of hydroxide ions in solution. The problems with this definition that made other definitions necessary are that it only applies to aqueous solutions and does not account for substances that can act as acids or bases in non-aqueous solvents. In addition, it does not account for substances that can act as both acids and bases (amphoteric substances).
+\subsubsection{Brønsted-Lowry}
+The Brønsted-Lowry definition of acids and bases is the most commonly used definition. It states that an acid is a substance that donates a proton (\ce{H+}) and a base is a substance that accepts a proton. This definition is more general than the Arrhenius definition and can be applied to non-aqueous solvents. It also accounts for amphoteric substances, which can act as both acids and bases.
+\subsubsection{Lewis}\label{sec:lewis_acids_bases}
+The Lewis definition of acids and bases is the most general definition. It states that an acid is a substance that accepts an electron pair and a base is a substance that donates an electron pair. While it is the most general definition, it is hard to grasp the concept of Lewis acids and bases.
+\subsection{Conjugate Acids and Bases}
+Acids and bases can be thought of as a pair of substances that are related to each other. When an acid donates a proton, it forms its conjugate base. When a base accepts a proton, it forms its conjugate acid. Take the following reaction as an example:
+\[\ce{NH3_{(aq)} + H2O_{(l)} <=> NH4+_{(aq)} + OH-_{(aq)}}\]
+In this reaction, \ce{NH3} is the base and \ce{H2O} is the acid. When \ce{NH3} accepts a proton from \ce{H2O}, it forms its conjugate acid, \ce{NH4+}. When \ce{H2O} donates a proton to \ce{NH3}, it forms its conjugate base, \ce{OH-}. These conjugate acids and bases themselves react with each other in a reversible reaction, which is why we use the double arrow in the reaction above. 
+
+If an acid is strong, its conjugate base will be weak. If a base is strong, its conjugate acid will be weak. This is because a strong acid will completely dissociate in solution, leaving very little of the conjugate base to react with. Similarly, a strong base will completely dissociate in solution, leaving very little of the conjugate acid to react with. In reactions where the acid or base is strong, we can ignore the reverse reaction and use a single arrow instead of a double arrow. 
+\subsection{pH and pOH}
+pH is a measure of the acidity of a solution. It is defined as the negative logarithm of the hydrogen ion concentration:
+\begin{equation}\label{eq:pH}
+    \text{pH} = -\log[\ce{H+}]
+\end{equation}
+pOH is a measure of the basicity of a solution. It is defined as the negative logarithm of the hydroxide ion concentration:
+\begin{equation}\label{eq:pOH}
+    \text{pOH} = -\log[\ce{OH-}]
+\end{equation}
+The relationship between pH and pOH is given by the equation:
+\begin{equation}\label{eq:pH_pOH}
+    \text{pH} + \text{pOH} = 14
+\end{equation}
+This means that if you know the pH of a solution, you can calculate the pOH, and vice versa. It is important to remember that the relationship between pH and pOH is only valid for aqueous solutions at 25°C. 
+
+Given these equations we can convert between pH and pOH, and also calculate the concentration of hydrogen ions or hydroxide ions in a solution if we know the pH or pOH.
+
+\begin{align}
+    [\ce{H+}] &= 10^{-\text{pH}} \label{eq:H+} \\
+    [\ce{OH-}] &= 10^{-\text{pOH}} \label{eq:OH-}
+\end{align}
+
+And knowing the relationship between pH and pOH from equation \eqref{eq:pH_pOH}, we get the relationship between the concentration of hydrogen ions and hydroxide ions in solution:
+
+\begin{equation}\label{eq:Kw}
+    [\ce{H+}] [\ce{OH-}] = 10^{-14}
+\end{equation}
+
+\subsection{Equilibrium for Aqueous}
+
+Water is a very special molecule. It can act as both an acid and a base, which is why it is called amphoteric. In fact water can even react with itself in a process called autoionization, where one water molecule donates a proton to another water molecule, forming a hydronium ion (\ce{H3O+}) and a hydroxide ion (\ce{OH-}):
+\[\ce{2H2O_{(l)} <=> H3O+_{(aq)} + OH-_{(aq)}}\]
+In aqueous solutions, we can write the equilibrium constant for the dissociation of water as:
+
+\begin{equation}
+    K_w = [\ce{H+}] [\ce{OH-}] = 10^{-14}
+\end{equation}
+
+This is the reason that the relationship between pH and pOH is given by equation \eqref{eq:pH_pOH}.
+For strong acids and bases, we can ignore the reverse reaction and use a single arrow instead of a double arrow. In this case there is no need to consider the equilibrium constant, as the reaction will go to completion. However, for weak acids and bases, we need to consider the equilibrium constant. In section \ref{sec:other_equilibrium_constants} we mentioned the equilibrium constant for the dissociation of a weak acid, which is called the acid dissociation constant, $K_a$. Similarly, we can define the base dissociation constant, $K_b$, for the dissociation of a weak base. The value of $K_a$ is the equilibrium constant for a reaction of the form
+\[\ce{HA_{(aq)} + H2O_{(l)} <=> A-_{(aq)} + H3O+_{(aq)}}\]
+where \ce{HA} is a weak acid and \ce{A-} is its conjugate base. The value of $K_b$ is the equilibrium constant for a reaction of the form
+\[\ce{B_{(aq)} + H2O_{(l)} <=> BH+_{(aq)} + OH-_{(aq)}}\]
+where \ce{B} is a weak base and \ce{BH+} is its conjugate acid.
+This gives us that the equilibrium constant for the dissociation of a weak acid is given by:
+
+\begin{equation}\label{eq:Ka}
+    K_a = \frac{[\ce{A-}] [\ce{H3O+}]}{[\ce{HA}]}
+\end{equation}
+
+And the equilibrium constant for the dissociation of a weak base is given by:
+
+\begin{equation}\label{eq:Kb}
+    K_b = \frac{[\ce{BH+}] [\ce{OH-}]}{[\ce{B}]}
+\end{equation}
+
+The relationship between $K_a$ and $K_b$ is given by the equation:
+
+\begin{equation}\label{eq:KaKb}
+    K_a K_b = K_w
+\end{equation}
+
+This means that if you know the value of $K_a$ for a weak acid, you can calculate the value of $K_b$ for its conjugate base, and vice versa. 
+
+\subsection{Titrations}
+
+Titrations are a common laboratory technique used to determine the concentration of an unknown acid or base. 
+
+\subsubsection{Titration Curves}
+
+A titration curve is a graph of the pH of a solution as a function of the volume of titrant added. The shape of the titration curve can provide information about the strength of the acid or base being titrated. Some points of interest on a titration curve include the equivalence point (sometimes called inflection point), which is the point at which the amount of titrant added is stoichiometrically equivalent to the amount of acid or base being titrated, the endpoint, which is the point at which the indicator changes color, and the starting point, which is the initial pH of the solution before any titrant is added.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        declare function={
+            f(\x)= -log10(
+                (sqrt(((\Mb*\x/(\Va+\x))+\ka)^2 + 4*\ka*((\Ma*\Va)-(\Mb*\x))/(\Va+\x)) - ((\Mb*\x/(\Va+\x))+\ka))/2
+            );
+            g(\x)=14+log10(
+                (((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) +
+                (
+                    sqrt(
+                        ((((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) + (10^(-14)/\ka))^2
+                        + 4*(10^(-14)/\ka)*\Ma*\Va
+                    )
+                    - ((((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) + (10^(-14)/\ka))
+                )/2
+            );
+            h(\x)=14+log10(((sqrt(((10^(-14)/\ka)+10^(-7))^2 - 2 * \Ma * (10^(-14)/\ka))-((10^(-14)/\ka)+10^(-7)))/2)+10^(-7));
+        }
+    ]
+        \pgfmathsetmacro{\ka}{13}
+        \pgfmathsetmacro{\Ma}{0.1}
+        \pgfmathsetmacro{\Mb}{0.1}
+        \pgfmathsetmacro{\Va}{20}
+        \pgfmathsetmacro{\kb}{(10^(-14)/\ka)}
+        \begin{axis}[
+            xlabel={Volume of Titrant Added (mL)},
+            ylabel={pH},
+            title={Strong-Strong Titration Curve},
+            grid=both,
+            axis lines=left,
+            minor tick num=1,
+            width=0.45\textwidth,
+            height=0.4\textwidth,
+            ymin=0,
+            ymax=14,
+        ]
+        % Add the titration curve
+        \addplot[
+            domain=0:{(\Va*\Ma/\Mb)-0.05},
+            samples=200,
+            thick,
+            color=myred,
+        ]{f(x)};
+        \addplot[
+            domain={(\Va*\Ma/\Mb)+0.05}:{2*\Va},
+            samples=200,
+            thick,
+            color=myred,
+        ]{g(x)};
+        \addplot[mark=none, color=myred, thick] coordinates 
+        {
+            ({(\Va*\Ma/\Mb)-0.05}, {f(x)})
+            ({(\Va*\Ma/\Mb)},{h(x)})
+            ({(\Va*\Ma/\Mb)+0.05}, {g(x)})
+            };
+        \addplot[
+                mark=*,
+                only marks, 
+                color=red, 
+                nodes near coords, 
+                point meta=explicit symbolic,
+                nodes near coords style={below right, node font=\small, inner ysep=1pt},
+                ] coordinates 
+        {
+            ({(\Va*\Ma/\Mb)}, {h(x)}) [Equivalence Point]
+            ({(\Va*\Ma/\Mb)+0.05}, {g(x)}) [Endpoint]
+            ({0}, {f(0)}) [Initial Point]
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{A titration curve for a strong acid being titrated with a strong base.}
+    \label{fig:titration_curve}
+\end{figure}
+
+Figure \ref{fig:titration_curve} shows a titration curve for a strong acid being titrated with a strong base. The initial point is at a low pH, and as the titrant is added, the pH increases until it reaches the equivalence point, where the pH is 7. After the equivalence point, the pH continues to increase as more titrant is added. The endpoint is slightly after the equivalence point, which is where the indicator changes color. If instead a strong base was being titrated with a strong acid, the initial point would be at a high pH, and as the titrant is added, the pH would decrease until it reaches the equivalence point, where the pH is 7. After the equivalence point, the pH continues to decrease as more titrant is added. The overall shape of the titration curve would be the same, but it would be flipped vertically. The reason that the endpoint is not exactly at the equivalence point is because of how indicators work. Indicators change color based on the pH of the solution, and they have a certain pH range over which they change color.  
+
+If the acid being titrated is not monoprotic, the titration curve will have multiple equivalence points, one for each proton that can be donated by the acid. For example, if a diprotic acid is being titrated, there will be two equivalence points on the titration curve, one for each proton that can be donated by the acid. 
+
+Weak acids and weak bases will have a more gradual change in pH and an small initial change in pH.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        declare function={
+            f(\x)= -log10(
+                (sqrt(((\Mb*\x/(\Va+\x))+\ka)^2 + 4*\ka*((\Ma*\Va)-(\Mb*\x))/(\Va+\x)) - ((\Mb*\x/(\Va+\x))+\ka))/2
+            );
+            g(\x)=14+log10(
+                (((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) +
+                (
+                    sqrt(
+                        ((((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) + (10^(-14)/\ka))^2
+                        + 4*(10^(-14)/\ka)*\Ma*\Va
+                    )
+                    - ((((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) + (10^(-14)/\ka))
+                )/2
+            );
+            h(\x)=14+log10(((sqrt(((10^(-14)/\ka)+10^(-7))^2 - 2 * \Ma * (10^(-14)/\ka))-((10^(-14)/\ka)+10^(-7)))/2)+10^(-7));
+        }
+    ]
+        \pgfmathsetmacro{\ka}{0.00043}
+        \pgfmathsetmacro{\Ma}{0.1}
+        \pgfmathsetmacro{\Mb}{0.1}
+        \pgfmathsetmacro{\Va}{20}
+        \pgfmathsetmacro{\kb}{(10^(-14)/\ka)}
+        \begin{axis}[
+            xlabel={Volume of Titrant Added (mL)},
+            ylabel={pH},
+            title={Weak-Strong Titration Curve},
+            grid=both,
+            axis lines=left,
+            minor tick num=1,
+            width=0.45\textwidth,
+            height=0.4\textwidth,
+            ymin=0,
+            ymax=14,
+        ]
+        % Add the titration curve
+        \addplot[
+            domain=0:{(\Va*\Ma/\Mb)-0.05},
+            samples=200,
+            thick,
+            color=myred,
+        ]{f(x)};
+        \addplot[
+            domain={(\Va*\Ma/\Mb)+0.05}:{2*\Va},
+            samples=200,
+            thick,
+            color=myred,
+        ]{g(x)};
+        \addplot[mark=none, color=myred, thick] coordinates 
+        {
+            ({(\Va*\Ma/\Mb)-0.05}, {f(x)})
+            ({(\Va*\Ma/\Mb)},{h(x)})
+            ({(\Va*\Ma/\Mb)+0.05}, {g(x)})
+            };
+        \addplot[
+                mark=*,
+                only marks, 
+                color=red, 
+                nodes near coords, 
+                point meta=explicit symbolic,
+                nodes near coords style={below right, node font=\small, inner ysep=1pt},
+                ] coordinates 
+        {
+            ({(\Va*\Ma/\Mb)}, {h(x)}) [Equivalence Point]
+            ({0}, {f(0)}) [Initial Point]
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{A titration curve for a weak acid being titrated with a strong base.}
+    \label{fig:titration_curve_weak}
+\end{figure}
+
+Figure \ref{fig:titration_curve_weak} shows a titration curve for a weak acid being titrated with a strong base. The initial point is at a higher pH than in the strong acid case, and has an initial hump before flattening out and then increasing rapidly at the equivalence point. 
+
+\subsubsection{$pKa$ and Weak Acid/Base Titrations}
+
+Similarly to pH, we can define $pK_a$ as the negative logarithm of the acid dissociation constant:
+\begin{equation}\label{eq:pKa}
+    pK_a = -\log K_a
+\end{equation}
+And we can define $pK_b$ as the negative logarithm of the base dissociation constant:
+\begin{equation}\label{eq:pKb}
+    pK_b = -\log K_b
+\end{equation}
+A nice property of $pK_a$ and $pK_b$ is that they are the pH values at which the concentrations of the acid and its conjugate base are equal, which is the point halfway between the starting point and the equivalence point on a titration curve. 
+
+\subsubsection{Indicators}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        declare function={
+            f(\x)= -log10(
+                (sqrt(((\Mb*\x/(\Va+\x))+\ka)^2 + 4*\ka*((\Ma*\Va)-(\Mb*\x))/(\Va+\x)) - ((\Mb*\x/(\Va+\x))+\ka))/2
+            );
+            g(\x)=14+log10(
+                (((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) +
+                (
+                    sqrt(
+                        ((((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) + (10^(-14)/\ka))^2
+                        + 4*(10^(-14)/\ka)*\Ma*\Va
+                    )
+                    - ((((\x*\Mb)-(\Va*\Ma))/(\Va+\x)) + (10^(-14)/\ka))
+                )/2
+            );
+            h(\x)=14+log10(((sqrt(((10^(-14)/\ka)+10^(-7))^2 - 2 * \Ma * (10^(-14)/\ka))-((10^(-14)/\ka)+10^(-7)))/2)+10^(-7));
+        }
+    ]
+        \pgfmathsetmacro{\ka}{13}
+        \pgfmathsetmacro{\Ma}{0.1}
+        \pgfmathsetmacro{\Mb}{0.1}
+        \pgfmathsetmacro{\Va}{20}
+        \pgfmathsetmacro{\kb}{(10^(-14)/\ka)}
+        \begin{axis}[
+            xlabel={Volume of Titrant Added (mL)},
+            ylabel={pH},
+            title={Phenolphthalein Indicator Region},
+            grid=both,
+            axis lines=left,
+            minor tick num=1,
+            width=0.45\textwidth,
+            height=0.4\textwidth,
+            ymin=0,
+            ymax=14,
+        ]
+        % Add the titration curve
+        \addplot[
+            domain=0:{(\Va*\Ma/\Mb)-0.05},
+            samples=200,
+            thick,
+            color=myred,
+        ]{f(x)};
+        \addplot[
+            domain={(\Va*\Ma/\Mb)+0.05}:{2*\Va},
+            samples=200,
+            thick,
+            color=myred,
+        ]{g(x)};
+        \addplot[mark=none, color=myred, thick] coordinates 
+        {
+            ({(\Va*\Ma/\Mb)-0.05}, {f(x)})
+            ({(\Va*\Ma/\Mb)},{h(x)})
+            ({(\Va*\Ma/\Mb)+0.05}, {g(x)})
+            };
+        \addplot[
+                mark=*,
+                only marks, 
+                color=red, 
+                nodes near coords, 
+                point meta=explicit symbolic,
+                nodes near coords style={below right, node font=\small, inner ysep=1pt},
+                ] coordinates 
+        {
+            ({(\Va*\Ma/\Mb)}, {h(x)}) [Equivalence Point]
+        };
+        \draw[top color=magenta,bottom color=magenta!50!white, opacity=0.2] (0,8) rectangle (40,10);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{A titration curve with the region for color change of phenolphthalein highlighted.}
+    \label{fig:titration_curve_indicator}
+\end{figure}
+
+When choosing an indicator for a titration, it is important to choose one that changes color around the pH of the equivalence point. In Figure \ref{fig:titration_curve_indicator}, phenolphthalein would be a good choice of indicator for this titration because it changes color in the pH range of 8.2 to 10, which is around the equivalence point of 7. Looking at the titration curve, we can see that the pH changes very rapidly around the equivalence point, so even if the endpoint is not exactly at the equivalence point, it will still be close enough for the indicator to change color.
+
+Most indicators are weak acids or weak bases themselves, so they have their own equilibrium constants that determine the pH range over which they change color. For example, phenolphthalein is a weak acid with a $K_a$ of $5.0 \times 10^{-10}$, which corresponds to a pH range of 8.2 to 10 for its color change. The pH at which an indicator changes color is given by its $pK_a$. An indicator is a good choice for a titration if its $pK_a$ is close to the pH of the equivalence point of the titration.
+
+\subsection{Solubility}
+Solubility is the maximum amount of a substance that can dissolve in a given amount of solvent at a given temperature. The main factors that can affect how much of a substance can dissolve in a solvent is the pressure (if the solute is a gas), the amount of solvent, the specific substance, the temperature, the presence of other substances, the pH of the solution, and Amphoterism.
+\subsubsection{The Solubility Product Constant}
+The solubility product constant, $K_{sp}$, is the equilibrium constant for the dissolution of a salt in water. Given the reaction
+\[\ce{A_nB_m_{(s)} <=> nA+_{(aq)} + mB-_{(aq)}}\]
+the solubility product constant is given by the equation:
+\begin{equation}\label{eq:Ksp}
+    K_{sp} = [\ce{A+}]^n [\ce{B-}]^m
+\end{equation}
+The value of $K_{sp}$ can be used to determine the solubility of a salt in water. Given a salt \ce{A_nB_m} with a known value of $K_{sp}$, the amount of the salt that will dissolve in water can be calculated by setting up an equilibrium expression using the stoichiometry of the dissolution reaction and solving for the concentration of the ions in solution. The general form of this calculation is as follows:
+\begin{equation}\label{eq:Ksp_general}
+    K_{sp} = (nx)^n (mx)^m
+\end{equation}
+Where $x$ is some variable with the relation to the concentrations as follows:
+\begin{align}
+    [\ce{A+}] &= nx \label{eq:A_concentration}\\
+    [\ce{B-}] &= mx \label{eq:B_concentration}
+\end{align}
+\subsubsection{The Common Ion Effect}
+The common ion effect is the decrease in solubility of a salt when a common ion is added to the solution. To account for this effect, we use an ICE table with the initial concentration of the common ion included. This also applies to the dissociation of weak acids and weak bases, where the common ion is the conjugate base or conjugate acid, respectively. The presence of the common ion will shift the equilibrium position of the reaction, resulting in a decrease in the concentration of the ions in solution and therefore a decrease in solubility.
+\subsection{Buffers}
+A buffer is a solution that can resist changes in pH when small amounts of acid or base are added. Buffers are typically made from a weak acid and its conjugate base, or a weak base and its conjugate acid. The equilibrium between the weak acid and its conjugate base (or the weak base and its conjugate acid) allows the buffer to neutralize added acids or bases, thus maintaining a relatively constant pH. 
+
+Buffers can be made by combining a weak acid and a weak base directly, or by using a salt of the weak acid or weak base with a common ion. 
+
+A buffers capacity is the amount of acid or base that can be added to a buffer solution before a significant change in pH occurs. 
+
+To calculate the pH of a buffer solution, we can use an ICE table with the initial concentrations of the weak acid and its conjugate base (or the weak base and its conjugate acid) included. We can then set up an equilibrium expression using the stoichiometry of the reaction and solve for the concentration of hydrogen ions in solution, which can then be used to calculate the pH of the buffer solution.
+
+Another way to calculate the pH of a buffer solution is to use the Henderson-Hasselbalch equation, which is derived from the equilibrium expression for the dissociation of a weak acid or weak base. The Henderson-Hasselbalch equation is given by:
+\begin{equation}\label{eq:Henderson_Hasselbalch_pH}
+    \text{pH} = pK_a + \log \left( \frac{[\text{A-}]}{[\text{HA}]} \right)
+\end{equation}
+
+This equation can be used to estimate the pH of a buffer solution if the concentrations of the weak acid and its conjugate base (or the weak base and its conjugate acid) are known, as well as the $pK_a$ of the weak acid (or the $pK_b$ of the weak base). It is important to note that the Henderson-Hasselbalch equation is only an approximation and is most accurate when the concentrations of the weak acid and its conjugate base (or the weak base and its conjugate acid) are similar.
+
+The equation for a weak base buffer solution is similar, but uses $pK_b$ instead of $pK_a$ and the concentrations of the weak base and its conjugate acid instead of the weak acid and its conjugate base:
+\begin{equation}\label{eq:Henderson_Hasselbalch_pOH}
+    \text{pOH} = pK_b + \log \left( \frac{[\text{BH+}]}{[\text{B}]} \right)
+\end{equation}
+This equation also shows us that the pH of a buffer solution made up of equal parts of a weak acid and its conjugate base will be equal to the $pK_a$ of the weak acid. This is because when the concentrations of the weak acid and its conjugate base are equal, the ratio in the logarithm is equal to 1, and $\log(1) = 0$, so the equation simplifies to $\text{pH} = pK_a$.
+

@@ -1,0 +1,59 @@
+\section{Electrochemistry}
+Electrochemistry is the study of the chemical processes that involve the movement of electrons. It encompasses a wide range of phenomena, including redox reactions, electrolysis, and the operation of batteries. Before diving into the specifics of electrochemistry, it is recommended to review the concepts of oxidation and reduction from section \ref{sec:OxidationReduction}.
+\subsection{Galvanic/Voltaic Cells}
+A galvanic cell, also known as a voltaic cell, is a device which harnesses the energy released from a spontaneous redox reaction to generate an electric current. It consists of two half-cells, each containing an electrode and an electrolyte solution. The half-cells are connected by a salt bridge, which allows ions to flow between them while preventing the mixing of the different solutions. The two electrodes are then connected by a wire, allowing electrons to flow from the anode (where oxidation occurs) to the cathode (where reduction occurs). The number of electrons flowing through the wire per unit time is the electric current, which can be measured in amperes (A). The formula for calculating the electric current is:
+\begin{equation}\label{eq:Current}
+I = \frac{Q}{t}
+\end{equation}
+where $I$ is the current, $Q$ is the charge in coulombs (C), and $t$ is the time in seconds (s). In addition the voltage (or electromotive force, EMF) of the cell is the potential difference between the two electrodes, which is relatable to how height is the potential for an object to fall. Voltage can be calculated from energy and charge using the formula:
+\begin{equation}\label{eq:Voltage}
+V = \frac{E}{Q}
+\end{equation}
+where $V$ is the voltage in volts (V), $E$ is the energy in joules (J), and $Q$ is the charge in coulombs (C). The resistance of the circuit is the opposition to the flow of electric current, and it can be calculated using Ohm's law:
+\begin{equation}\label{eq:Resistance}
+    R = \frac{V}{I}
+\end{equation}
+where $R$ is the resistance in ohms ($\Omega$). 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-03 at 9.09.06 PM.png}
+    \caption{Schematic of a galvanic cell}
+    \label{fig:GalvanicCell}
+\end{figure}
+In figure \ref{fig:GalvanicCell}, the porous disk is equivalent to the salt bridge, which allows ions to flow between the two half-cells while preventing the mixing of the different solutions. As the reaction proceeds, the anode will lose mass as it is oxidized, its metal becoming ions dissolved in the solution, while the cathode will gain mass as it is reduced, its ions from the solution plating onto the electrode. A mnemonic for remembering the direction of electron flow is ``An Ox gets thin, while the Red Cat gets fat'' (Anode Oxidation, Reduction Cathode).
+\subsubsection{Line Notation}
+Line notation is a shorthand way of representing the components of a galvanic cell. It is written in the form:
+\[\text{Anode} | \text{Anode Solution} || \text{Cathode Solution} | \text{Cathode}\]
+
+where the single vertical line (|) represents a phase boundary, and the double vertical line (||) represents the salt bridge. For example the line notation 
+\[\ce{Mg(s) | Mg^{2+}(aq) || Al^{3+}(aq) | Al(s)}\]
+represents the reaction,
+\[\ce{3Mg(s) + 2Al^{3+}(aq) -> 3Mg^{2+}(aq) + 2Al(s)}\]
+\subsection{Electromotive Force (EMF)}
+The electromotive force ($\mathcal{E}$) is the difference in electrical potential between the two electrodes of a galvanic cell. It is measured in volts (V) and can be calculated using the standard reduction potentials of the half-reactions occurring at the anode and cathode. The formula for calculating the EMF of a galvanic cell is:
+\begin{equation}\label{eq:EMF}
+\mathcal{E} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}
+\end{equation}
+where $E^\circ_{\text{cathode}}$ is the standard reduction potential of the cathode and $E^\circ_{\text{anode}}$ is the standard reduction potential of the anode. The standard reduction potentials can be found in tables, such as table \ref{table:StandardPotential}. A positive EMF indicates a spontaneous reaction, while a negative EMF indicates a non-spontaneous reaction. 
+\subsubsection{The Activity Series}
+The activity series is a list of elements ranked in order of their ability to be oxidized. It is used to predict the outcome of redox reactions, particularly single displacement reactions. The activity series is based on the standard reduction potentials of the elements, with those having more negative potentials being more easily oxidized. 
+\subsubsection{$\mathcal{E}$, $\Delta G$, and the Nernst Equation}
+The relationship between the electromotive force ($\mathcal{E}$) of a galvanic cell and the Gibbs free energy change ($\Delta G$) of the reaction can be expressed by the following equation:
+\begin{equation}\label{eq:EMF_DeltaG}
+\Delta G = -nF\mathcal{E}
+\end{equation}
+where $n$ is the number of moles of electrons transferred in the reaction, and $F$ is the Faraday constant, approximately equal to 96485 C/mol. This equation indicates that a positive EMF corresponds to a negative $\Delta G$, which means the reaction is spontaneous, while a negative EMF corresponds to a positive $\Delta G$, indicating a non-spontaneous reaction. 
+
+This is further related to the Nernst equation, which allows for the calculation of the EMF of a cell under non-standard conditions:
+\begin{equation}\label{eq:Nernst}
+\mathcal{E} = \mathcal{E}^\circ - \frac{RT}{nF} \ln Q
+\end{equation}
+where $\mathcal{E}^\circ$ is the standard EMF, $R$ is the ideal gas constant (8.314 J/mol$\cdot$K), $T$ is the temperature in Kelvin, $n$ is the number of moles of electrons transferred, $F$ is the Faraday constant, and $Q$ is the reaction quotient. The Nernst equation is no longer required for the AP exam, but it is a useful tool and can be applied to some problems.
+\subsection{Electrolytic Cells}
+An electrolytic cell is very similar to a galvanic cell, but it requires an external source of electrical energy to drive a non-spontaneous reaction. With this we can do things like electrolysis or electroplating.
+\subsubsection{Electrolysis}
+Electrolysis is the process of using an electric current to drive a non-spontaneous chemical reaction. It is commonly used for the decomposition of compounds, such as the electrolysis of water to produce hydrogen and oxygen gas:
+\[\ce{2H2O(l) -> 2H2(g) + O2(g)}\]
+To do math with electrolysis, just remember that amps are coulombs per second (equation \eqref{eq:Current}), and that 1 mole of electrons is 96485 coulombs (Faraday's constant). Using this values you can use stoichiometry to find the amount of product produced or reactant consumed in an electrolysis reaction. 
+\subsubsection{Electroplating}
+Electroplating is the process of using electrolysis to deposit a thin layer of metal onto a surface. This is a type of electrolysis where the cathode is the object being plated, and the anode is a piece of the metal being deposited. 

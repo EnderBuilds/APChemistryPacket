@@ -1,0 +1,218 @@
+\section{Thermodynamics}
+Thermodynamics is the study of energy and its transformations. In chemistry, it is used to understand the energy changes that occur during chemical reactions and physical processes. At it's core energy is the ability to do work or produce heat. There are two main types of energy: kinetic energy, which is the energy of motion, and potential energy, which is the energy stored in an object due to its position or configuration. The total energy of a system is the sum of its kinetic and potential energy. 
+
+Kinetic energy is given by the equation \eqref{eq:KE}, and includes subtypes of energy such as thermal, mechanical, and electrical energy. Potential energy includes chemical energy, which is stored in the bonds of molecules, and nuclear energy, which is stored in the nucleus of an atom. The force between two charged particles is given by Coulomb's Law, which is expressed in equation \eqref{eq:coulombs} is also a form of potential energy. 
+
+\subsection{Properties of Energy}
+\subsubsection{Laws of Thermodynamics}
+Energy is governed by three main laws called the laws of thermodynamics. 
+
+The first law of thermodynamics, also known as the law of energy conservation, states that energy cannot be created or destroyed, only transferred or transformed. This means that the total energy of an isolated system remains constant. This can be mathematically expressed as:
+\begin{equation}\label{eq:firstLaw}
+    \Delta H_\text{System} + \Delta H_\text{Surroundings} = 0
+\end{equation}
+Where $\Delta H$ is the change in enthalpy (see section \ref{sec:enthalpy}). 
+
+The second law of thermodynamics states that the total entropy of an isolated system can never decrease over time. This means that natural processes tend to move towards a state of greater disorder or randomness. See section \ref{sec:entropy} for more information on entropy.
+
+The third law of thermodynamics states that as the temperature of a system approaches absolute zero, the entropy of the system approaches a minimum value. This means that at absolute zero, the system is in a state of perfect order and has zero entropy. This law also implies that it is impossible to reach absolute zero in a finite number of steps, and that as temperature decreases, the efficiency of energy transfer processes increases.
+\subsubsection{Heat, Temperature, Work, and Power}
+Temperature is a measure of the average kinetic energy of the particles in a substance. We measure temperature in degrees Celsius (\textdegree C) or Kelvin (K). A high temperature means a high average kinetic energy, while a low temperature means a low average kinetic energy. 
+
+Heat is the transfer of energy from one object to another due to a temperature difference. Heat flows from a hotter object to a cooler object until thermal equilibrium is reached. For most cases in chemistry, heat can be represented by the change in enthalpy $\Delta H$ of a system, which is the heat absorbed or released during a chemical reaction or physical process.
+
+Work is the transfer of energy that occurs when a force is applied to an object and causes it to move. This is not as common in chemistry and is mostly found in physics, but the equation for work is given by:
+\begin{equation}\label{eq:work}
+    W = F \Delta x
+\end{equation}
+Where $F$ is the force applied and $\Delta x$ is the distance moved. A Force is just a push or pull and can be related to acceleration by Newton's second law,
+\begin{equation}\label{eq:newton}
+    F = ma
+\end{equation}
+Where $m$ is the mass of the object and $a$ is the acceleration. Power is the rate at which work is done or energy is transferred. It is measured in watts (W) and is given by the equation:
+\begin{equation}\label{eq:power}
+    P = \frac{W}{t}
+\end{equation}
+Where $W$ is the work done and $t$ is the time taken to do the work. 
+\subsection{Enthalpy, Entropy, and Free Energy}
+\subsubsection{Enthalpy}\label{sec:enthalpy}
+Enthalpy ($H$) is a measure of the total energy of a system, including both kinetic and potential energy. Usually we are interested in the change in enthalpy expressed as $\Delta H$, which is the difference in enthalpy at the end of a process and the beginning of a process. The change in enthalpy can be found using the heat equation:
+\begin{equation}\label{eq:heat}
+    \Delta H = mC\Delta T
+\end{equation}
+Where $m$ is the mass of the substance, $C$ is the specific heat capacity, and $\Delta T$ is the change in temperature. This equation can be used to calculate the heat or change in enthalpy for a substance when it is heated or cooled.
+The specific heat capacity ($C$) is the amount of heat required to raise the temperature of one gram of a substance by one degree Celsius. It is a physical property of a substance and is independent on the amount of substance present. The specific heat capacity is different for different phases of matter, with solids generally having lower specific heat capacities than liquids and gases. 
+\subsubsection{Entropy}\label{sec:entropy}
+Entropy ($S$) is a measure of the disorder or randomness of a system. The equation for entropy is given by:
+\begin{equation}\label{eq:entropy}
+    S = k \ln{W}
+\end{equation}
+Where $k$ is Boltzmann's constant and $W$ is the number of microstates available to the system. A microstate is a specific arrangement of particles in a system, and the more microstates available, the higher the entropy. The change in entropy ($\Delta S$) can be calculated using the equation:
+\begin{equation}\label{eq:deltaS}
+    \Delta S_\text{System} = \frac{\Delta H_\text{System}}{T}
+\end{equation}
+Where $\Delta H_\text{System}$ is the change in enthalpy of the system and $T$ is the temperature in Kelvin. This equation shows that the change in entropy is directly proportional to the change in enthalpy and inversely proportional to the temperature. The second law of thermodynamics states that the total entropy of an isolated system can never decrease over time, which means that natural processes tend to move towards a state of greater disorder or randomness. This implies that spontaneous processes are those that increase the total entropy of the system and its surroundings.
+A process is spontaneous if it occurs without the input of external energy. 
+
+When a substance undergoes a phase change, such as from solid to liquid or from liquid to gas, there is a change in entropy. This is because the particles in the substance become more disordered as they move from a more ordered phase (solid) to a less ordered phase (liquid) and then to an even less ordered phase (gas). 
+
+The entropy of atoms and molecules is related to their degrees of freedom, which are the ways in which they can move and rotate. For example, a diatomic molecule has more degrees of freedom than a monatomic atom, and therefore has a higher entropy. The more bonds a molecule has, the more ways it can rotate and flex and therefore the higher its entropy. Additionally, larger molecules generally have higher entropy than smaller molecules because they have more atoms and therefore more degrees of freedom.
+
+The entropy change of a chemical reaction will increase the more gas molecules are produces, the more molecules are involved, the higher the phase energy, the more mixed the products are, and the larger the temperature increase since faster molecules are more chaotic. 
+\subsubsection{Gibbs Free Energy}
+The amount of energy available to do work in a system is called the Gibbs free energy ($G$). The change in Gibbs free energy ($\Delta G$) can be calculated using the equation:
+\begin{equation}\label{eq:free_energy}
+    \Delta G = \Delta H - T\Delta S
+\end{equation}
+Where $\Delta H$ is the change in enthalpy, $T$ is the temperature in Kelvin, and $\Delta S$ is the change in entropy. A negative value of $\Delta G$ indicates that a process is spontaneous, while a positive value indicates that a process is non-spontaneous. If $\Delta G$ is zero, the system is at equilibrium. Using this equation, we can determine whether a reaction is spontaneous or not under certain conditions. 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{c c c}
+        $\Delta H$ & $\Delta S$ & Spontaneity \\
+        \hline
+        $-$ & $+$ & Spontaneous \\
+        $-$ & $-$ & Spontaneous for small $T$ \\
+        $+$ & $+$ & Spontaneous for large $T$ \\
+        $+$ & $-$ & Non-Spontaneous \\
+    \end{tabular}
+    \caption{Spontaneity of Reactions Based on Enthalpy and Entropy Changes}
+    \label{table:spontaneity}
+\end{table}
+Looking at table \ref{table:spontaneity}, we can see when a reaction will be spontaneous based on the signs of $\Delta H$ and $\Delta S$. 
+\subsection{Calorimetry}
+Calorimetry is the measurement of heat transfer during a chemical reaction or physical process. It is used to determine the enthalpy change or heat of a reaction. This is mostly accomplished using a calorimeter, which is an insulated container that minimizes heat exchange with the surroundings. By measuring the temperature change of the system and knowing the specific heat capacity and mass of the substance, we can calculate the heat transfer using the heat equation \eqref{eq:heat}.
+\subsubsection{System and Surroundings}
+In calorimetry, the system is the part of the universe that is being studied, while the surroundings are everything else. The system can be an object, a chemical reaction, or a physical process. The surroundings can include the container, the air, and any other objects that are not part of the system. There are three types of systems: open, closed, and isolated. An open system can exchange both matter and energy with its surroundings, a closed system can exchange only energy, and an isolated system cannot exchange either matter or energy.
+\subsubsection{Exothermic and Endothermic}
+A process is exothermic if it releases heat to the surroundings, which means that $\Delta H$ is negative. A process is endothermic if it absorbs heat from the surroundings, which means that $\Delta H$ is positive. 
+\subsubsection{Phase Changes}
+Energy is required to change the phase of a substance, such as from solid to liquid or from liquid to gas. The amount of energy required for a phase change is called the heat of fusion (for melting) or the heat of vaporization (for boiling). These values can be used to calculate the heat transfer during a phase change using the equation:
+\begin{equation}\label{eq:phase_change}
+    \Delta H = n\Delta H_\text{phase change}
+\end{equation}
+Where $n$ is the number of moles of the substance and $\Delta H_\text{phase change}$ is the heat of fusion or vaporization. When a substance undergoes a phase change, the temperature remains constant until the phase change is complete, even though heat is being transferred. This is because the energy is being used to break or form intermolecular forces rather than to increase the kinetic energy of the particles. The heat of fusion, heat of vaporization, and specific heat capacities of water can be found below in table \ref{table:water_properties}.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{l c}
+        Property & Value \\
+        \hline
+        $C_l$ & 4.184 J/g\textdegree C \\
+        $C_s$ & 2.05 J/g\textdegree C \\
+        $C_g$ & 1.996 J/g\textdegree C \\
+        $\Delta H_\text{fus}$ & 6.01 kJ/mol or 334 J/g \\
+        $\Delta H_\text{vap}$ & 40.7 kJ/mol or 2260 J/g \\
+    \end{tabular}
+    \caption{Thermodynamic Properties of Water}
+    \label{table:water_properties}
+\end{table}
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \message{Phase transition of ice -> water -> steam^^J}
+        \def\ymin{-0.8}
+        \def\ymax{3}
+        \def\xmin{-0.2}
+        \def\xmax{7}
+        \def\t{0.3}    % water/steam transition zone
+        \def\ang{30.4} % angle gradient
+        \coordinate (O) at (0,0);
+        \coordinate (I) at (0.0,-0.4); % ice
+        \coordinate (M) at (0.4,0.0);  % melting
+        \coordinate (W) at (1.2,0.0);  % water
+        \coordinate (E) at (2.6,2,0);  % evaporate
+        \coordinate (S) at (6.6,2.0);  % steam
+        \coordinate (F) at (6.9,2.9);  % final
+        \coordinate (Ex) at ($(E|-O)$); % x evaporation
+        \coordinate (Ey) at ($(E-|O)$); % y evaporation
+        \coordinate (Sx) at ($(S|-O)$); % x steam
+        \coordinate (Fx) at ($(F|-O)$);
+        
+        % AREA
+        \fill[mylightblue] (O) -- (I) -- (M) -- cycle;
+        \fill[blue!8] (W) -- (Ex) -- (S) -- (E) -- cycle;
+        \fill[mylightred] (Ex) -- (S) -- (F) -- (Fx) -- cycle;
+        \begin{scope} % fade/gradient border
+            \clip (Ex) -- (Sx) -- (S) -- (E) -- cycle; % clip gradient rectangle
+            \draw[draw=none,transform canvas={rotate=\ang},top color=blue!8,bottom color=mylightred,shading angle=0]
+            ({2.6*cos(\ang)},{-2.6*sin(\ang)-\t}) rectangle++(0.65*\xmax,\t); % diagonal border 
+        \end{scope}
+        \node[blue!40!black,left=4,below right=10] at (E) {water};
+        \node[red!40!black,above left=10] at (Sx) {steam};
+        
+        % AXES
+        \draw[->,thick] (0,\ymin) -- (0,\ymax) node[below left=0] {$T$ [\si{\degree C}]};
+        \draw[->,thick] (\xmin,0) -- (\xmax+0.1,0) node[below left=0] {$Q$ [J]}; %[\si{J}]
+        \draw[dashed] (Ex) -- (E) --++ (0,0.1*\ymax);
+        \draw[dashed] (Ey) -- (E);
+        \draw[dashed] (Sx) -- (S) --++ (0,0.1*\ymax);
+        \tick{I}{0} node[left=-1] {$-20$};
+        \tick{Ey}{0} node[left=-1] {$100$};
+        
+        \draw[dashed] (E) -- (Ex);
+        \draw[myblue,thick]
+            (I) -- (M) -- (W)
+            node[midway,above=-1,scale=0.8] {melt}
+            node[midway,below=-1,scale=0.8] {$m\Delta H_\mathrm{fus}$} --
+            (E)
+            node[pos=0.6,left=1,scale=0.8] {$mc\Delta T$} --
+            (S)
+            node[midway,above=-1,scale=0.8] {evaporate (cook)}
+            node[midway,below=-1,scale=0.8] {$m\Delta H_\mathrm{vap}$} --
+            (F);
+        
+        \end{tikzpicture}
+    \caption{Heating curve of water.}
+    \label{fig:heating_curve}
+\end{figure}
+\subsubsection{Enthalpy of Reaction and Molar Heat}
+The enthalpy of reaction ($\Delta H_\text{rxn}$) is the change in enthalpy that occurs during a chemical reaction. Similarly, the molar heat of a reaction is the enthalpy change per mole of a substance involved in the reaction. It can be calculated by dividing the enthalpy change by the number of moles of the substance. These values can be used to convert between the amount of heat transferred and the amount of substance involved in a reaction using stoichiometry.
+
+\subsection{Light Waves and their Energies}
+Electromagnetic radiation, or light, is a form of energy that travels in waves. The energy of a light wave is directly proportional to its frequency ($\nu$) and inversely proportional to its wavelength ($\lambda$). The frequency and wavelength of light are related by the equation:
+\begin{equation}\label{eq:light_speed}
+    c = \lambda \nu
+\end{equation}
+Where $c$ is the speed of light, which is approximately $3.00 \times 10^8$ m/s. The energy of a light wave can be calculated using the equation:
+\begin{equation}\label{eq:light_energy}
+    E = h\nu = \frac{hc}{\lambda}
+\end{equation}
+Where $h$ is Planck's constant, which is approximately $6.626 \times 10^{-34}$ J·s. This equation shows that the energy of a photon is proportional to its frequency and inversely proportional to its wavelength. This means that higher frequency light (such as ultraviolet) has more energy than lower frequency light (such as infrared).
+The electromagnetic spectrum is the range of all types of electromagnetic radiation, which includes radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays. Each type of radiation has a different wavelength and frequency, and therefore a different energy. Each different wavelength of light corresponds to a different color in the visible spectrum, with red having the longest wavelength around 650 nm, Orange around 590 nm, Yellow around 570 nm, Green around 510 nm, Blue around 475 nm, and Violet around 400 nm. 
+In addition the energies of photons can be used to determine their mass using the equation:
+\begin{equation}\label{eq:massEnergy}
+    E = mc^2
+\end{equation}
+Where $m$ is the mass of the photon and $c$ is the speed of light. 
+
+Photons can cause electrons to be excited to higher energy levels, which causes them to emit light when they return to their ground state. This is the basis for phenomena such as fluorescence and phosphorescence. The energy of the emitted light corresponds to the difference in energy between the excited state and the ground state. For more see section \ref{sec:atomModels}.
+
+\subsection{Enthalpy, Entropy, and Free Energy of Reactions}
+\subsection{Standard Conditions and Standard State}
+Standard conditions refer to a set of specific conditions that are used as a reference point for measuring and comparing the properties of substances and reactions. The standard state of a substance is its most stable form at a pressure of 1 atm, a temperature of 25\textdegree C (298.15 K), a concentration of 1 M for solutions, and a pH of 7 for aqueous solutions. The standard enthalpy change ($\Delta H^\circ$), standard entropy change ($\Delta S^\circ$), and standard Gibbs free energy change ($\Delta G^\circ$) of a reaction are the changes in these properties when the reactants and products are in their standard states. The circle, called naught, in each of these symbols indicates that the values are measured under standard conditions. 
+\subsection{Enthalpy of Formation}
+The enthalpy of formation ($\Delta H_f^\circ$) is the change in enthalpy that occurs when one mole of a compound is formed from its elements in their standard states. The standard enthalpy of formation for an element in its most stable form is defined as zero. The enthalpy change of a reaction can be calculated using the enthalpies of formation of the reactants and products using the equation:
+\begin{equation}\label{eq:enthalpy_of_formation}
+    \Delta H_\text{rxn} = \sum \Delta H_f^\circ(\text{prod}) - \sum \Delta H_f^\circ (\text{react})
+\end{equation}
+This equation allows us to calculate the enthalpy change of a reaction using tabulated values of the enthalpies of formation of the substances involved in the reaction.
+\subsection{Entropy of Formation}
+The entropy of formation ($\Delta S_f^\circ$) is the change in entropy that occurs when one mole of a compound is formed from its elements in their standard states. Similar to the enthalpy of formation, the standard entropy of formation for an element in its most stable form is defined as zero. The entropy change of a reaction can be calculated using the entropies of formation of the reactants and products using the equation:
+\begin{equation}\label{eq:entropy_of_formation}
+    \Delta S_\text{rxn} = \sum \Delta S_f^\circ(\text{prod}) - \sum \Delta S_f^\circ (\text{react})
+\end{equation}
+This is the same as the equation for enthalpy of formation, but with entropy values instead.
+\subsection{Gibbs Free Energy of Formation}
+The Gibbs free energy of formation ($\Delta G_f^\circ$) is the change in Gibbs free energy that occurs when one mole of a compound is formed from its elements in their standard states. Similar to the enthalpy and entropy of formation, the standard Gibbs free energy of formation for an element in its most stable form is defined as zero. The Gibbs free energy change of a reaction can be calculated using the Gibbs free energies of formation of the reactants and products using the equation:
+\begin{equation}\label{eq:free_energy_of_formation}
+    \Delta G_\text{rxn} = \sum \Delta G_f^\circ(\text{prod}) - \sum \Delta G_f^\circ (\text{react})
+\end{equation}
+This is the same as the equations for enthalpy and entropy of formation, but with Gibbs free energy values instead. 
+In addition to calculating the Gibbs free energy change of a reaction, we can also use the standard Gibbs free energy of formation to calculate the equilibrium constant ($K$) of a reaction using the equation:
+\begin{equation}\label{eq:free_energy_equilibrium}
+    \Delta G^\circ = -RT \ln{K}
+\end{equation}
+Where $R$ is the gas constant and $T$ is the temperature in Kelvin. This equation showcases the relationship between the Gibbs free energy change of a reaction and its equilibrium constant. In addition, we can write out how the Gibbs free energy change of a reaction changes with different concentrations of reactants and products using the equation:
+\begin{equation}\label{eq:free_energy_concentration}
+    \Delta G = \Delta G^\circ + RT \ln{Q}
+\end{equation}
+Where $Q$ is the reaction quotient, which is the ratio of the concentrations of products to reactants at any given point in time. 

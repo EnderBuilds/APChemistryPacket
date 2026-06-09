@@ -1,0 +1,208 @@
+\section{Kinetics}
+Kinetics is the study of the rate or speed of reactions. The main factors that affect the rate of a reaction are, the concentrations of the reactants, the surface area of an solid reactants, the phase of the reactants, the temperature, and the presence of a catalyst. 
+\subsection{Collision Theory}
+Collision theory states that for a reaction to occur, the reactant particles must collide with each other with sufficient energy and the correct orientation. The minimum energy required for a reaction to occur is called the activation energy. The more collisions that occur, the more likely it is that they will be successful and lead to a reaction. Therefore since increasing the concentration of reactants increases the number of collisions, it will increase the rate of the reaction\footnote{If it is hard to see why an increased concentrations will cause more collisions, think of the ideal gas law. $PV=nRT$ if we divide both sides by $V$ we get $P=nRT/V$, and $n/V$ is the concentration. So $P=MRT$ and $P\propto M$}.
+Similarly a larger surface area of a solid reactant allows for more collisions to occur, and therefore increases the rate of the reaction. The phase of the reactants also affects the rate of the reaction, as reactions between gases tend to be faster than reactions between solids or liquids due to the increased mobility of gas particles.
+\subsubsection{Maxwell Boltzmann Curves}
+Temperature is a measure of the average kinetic energy of the particles in a substance. Since it is an average some particles will have more energy and some will have less. The Maxwell Boltzmann curve shows the distribution of kinetic energies of particles in a substance at a given temperature. 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \def\xmax{6.0}
+        \def\ymax{4.0}
+        \def\k{4500} % k = m/2k
+        \def\xscale{0.14}
+        \def\vn{2.6}
+        \def\vmax{sqrt(300/\k)/\xscale}
+        \def\vrms{sqrt(300/(2*\k/3))/\xscale}
+        \coordinate (O) at (0,0);
+        \coordinate (X) at (\xmax,0);
+        \coordinate (Y) at (0,\ymax);
+        
+        % AXIS
+        \draw[<->,thick]
+            (Y) node[above left,rotate=90] {Probability} -- (0,0) -- (X) node[right=4,below] {$v$ [\si{m/s}]};
+        \foreach %\x [evaluate={\c=sqrt(\k/0.00096); \v=(round(\x*\c/\xscale))}] in {1,...,3}{
+                \i [evaluate={\v=int(\i*200);}] in {0,...,5}{
+            \pgfmathsetmacro\x{\v*sqrt(0.00192)/\xscale/sqrt(\k))} % higher precision
+            \tick{\x,0}{90} node[below,scale=0.8] {\v};
+        }
+        
+        % LABELS
+        \node[blue!50!black,above right=-1,scale=0.9] at (\vn,{\maxwell{\vn}{300}}) {$T=\SI{300}{K}$}; %f(x)
+        \draw[myblue,dashed,thin]
+            ({\vmax},0) coordinate (VM) --++ (0,{1.04*\maxwell{\vmax}{300}})
+            node[myblue,left=1,above left=-4,scale=0.9] {$v_\text{p}$};
+        \draw[mygreen,dashed,thin]
+            ({\vrms},0) coordinate (VR) --++ (0,{1.04*\maxwell{\vmax}{300}})
+            node[mygreen,above=2,below right=0,scale=0.9] {$v_\text{rms}$};
+        \draw[myred,dashed,thin]
+            ({\vrms+1},0) coordinate (VE) --++ (0,{0.6*\maxwell{\vrms}{300}})
+            node[myred,below=2,above right=0,scale=0.9] {$v_\text{a}$};
+        %\tick{VM}{90}; %node[myblue,right=1,below left=0,scale=0.85] {$v_\text{p}$};
+        %\tick{VE}{90}; %node[myred,left=1,below=-2,scale=0.85] {$\expval{v}$};
+        %\tick{VR}{90}; %node[mygreen,below right=0,scale=0.85] {$v_\text{rms}$};
+        
+        % PLOT
+        \draw[blue!50!black,thick,samples=100,smooth,variable=\x,domain=0.01:0.94*\xmax]
+            plot(\x,{\maxwell{\x}{300}});
+        
+    \end{tikzpicture}
+    \caption{Maxwell Boltzmann Curve}
+    \label{fig:MaxwellBoltzmann}
+\end{figure}
+The highest point on the curve is the most common speed or kinetic energy, denoted in figure \ref{fig:MaxwellBoltzmann} as $v_\text{p}$. The speed with the average kinetic energy is the root mean square speed, denoted as $v_\text{rms}$. The formula to calculate the root mean squared speed is as follows;
+\begin{equation}\label{eq:vrms}
+v_\text{rms} = \sqrt{\frac{3RT}{M}}
+\end{equation}
+Where $R$ is the gas constant and $M$ is the molar mass of the gas. The minimum speed required for a reaction to occur is the activation energy, denoted as $v_\text{a}$. As the temperature increases, the curve flattens and shifts to the right, indicating that more particles have higher kinetic energies and therefore more particles have enough energy to overcome the activation energy barrier, leading to an increased rate of reaction. 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \def\xmax{6.0}
+        \def\ymax{4.0}
+        \def\k{2000}
+        \def\xscale{0.25}
+        \def\vb{1.1}
+        \def\vg{1.6}
+        \def\vr{2.4}
+        \coordinate (O) at (0,0);
+        \coordinate (X) at (\xmax,0);
+        \coordinate (Y) at (0,\ymax);
+        
+        % AXIS
+        \draw[<->,thick]
+            (Y) node[above left,rotate=90] {Probability} -- (0,0) -- (X) node[below] {$v$ [\si{m/s}]};
+        \foreach \i [evaluate={\v=int(\i*200);}] in {0,...,6}{
+            \pgfmathsetmacro\x{\v*sqrt(0.00192)/\xscale/sqrt(\k))} % higher precision
+            \tick{\x,0}{90} node[below,scale=0.8] {\v};
+        }
+        
+        % LABELS
+        \node[bline,above right=-1,scale=0.95] at (\vb,{\maxwell{\vb}{100}}) {$T_1=\SI{100}{K}$};
+        \node[gline,above right=-2,scale=0.95] at (\vg,{\maxwell{\vg}{300}}) {$T_2=\SI{300}{K}$};
+        \node[rline,above right=-2,scale=0.95] at (\vr,{\maxwell{\vr}{500}}) {$T_3=\SI{500}{K}$};
+        
+        % PLOT
+        \draw[bline,samples=100,smooth,variable=\x,domain=0.01:0.94*\xmax]
+            plot(\x,{\maxwell{\x}{100}});
+        \draw[gline,samples=100,smooth,variable=\x,domain=0.01:0.94*\xmax]
+            plot(\x,{\maxwell{\x}{300}});
+        \draw[rline,samples=100,smooth,variable=\x,domain=0.01:0.94*\xmax]
+            plot(\x,{\maxwell{\x}{500}});
+  
+    \end{tikzpicture}
+    \caption{Maxwell Boltzmann Curves at different temperatures}
+    \label{fig:MaxwellBoltzmann2}
+\end{figure}
+This can be seen in figure \ref{fig:MaxwellBoltzmann2}. It is also not uncommon to see maxwell boltzmann curves where speed is replaced by kinetic energy, but the same principles apply. Remember that kinetic energy is related to speed by
+\begin{equation}\label{eq:KE}
+    KE = \frac{1}{2}mv^2
+\end{equation}
+The effect of a catalyst on the Maxwell Boltzmann curve is to lower the activation energy, which allows more particles to have enough energy to react, increasing the rate of the reaction.
+\subsubsection{Mechanisms}
+Most reactions don't take one step, but instead a series of simple steps involving one collision. These simple steps are called elementary steps, and the series of steps is called the reaction mechanism. In the process of the reaction high energy radicals can be formed during transition states where the bonds are breaking and forming. These radicals are called intermediates and are used up in the following steps. Different steps in the mechanism can occur at different rates. The overall reaction is determined by the slowest of the steps, which is called the rate determining step. 
+\subsection{Reaction Energy Diagrams}
+A reaction energy diagram is a graph that shows the energy changes that occur during a chemical reaction. The x-axis represents the progress of the reaction, while the y-axis represents the energy of the system. 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \draw[->, thick] (0,0) -- (7,0) node[below] {Time};
+        \draw[->, thick] (0,0) -- (0,4.5) node[above, right] {Potential Energy};
+        
+        % Energy curve for endothermic reaction
+        \draw[thick, myblue] (0,3) -- (1.5,3) to[out=0,in=180] (3,4) to[out=0,in=180] (6,1) -- (7,1);
+
+        \draw[dashed, gray] (0,3) -- (7,3);
+        \draw[dashed, gray] (0,1) -- (7,1);
+
+        \draw[<->, myred, thick] (0.5,3) -- (0.5,1) node[midway, right] {$\Delta H$};
+        \draw[<->, mygreen, thick] (3,3) -- (3,4) node[midway, right] {$E_a$};
+
+        \node[above] at (1,3) {Reactants};
+        \node[below] at (6,1) {Products};
+    \end{tikzpicture}
+    \caption{Reaction Energy Diagram}
+    \label{fig:ReactionEnergyDiagram}
+\end{figure}
+The value $\Delta H$ represents the change in enthalpy of the reaction (see section \ref{sec:enthalpy}), or the change in energy from the reactants to the products. $E_a$ represents the activation energy, or the energy barrier that must be overcome for the reaction to occur. When there are multiple steps in a reaction, there will be multiple peaks in the energy diagram.
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \draw[->, thick] (0,0) -- (7,0) node[below] {Time};
+        \draw[->, thick] (0,0) -- (0,4.5) node[above, right] {Potential Energy};
+        
+        % Energy curve for multi-step reaction
+        \draw[thick, myblue] (0,0.5) -- (0.5,0.5) node[below right] {Reactants} to[out=0,in=180] (2.5,3.5) node[above] {Transition State} to[out=0,in=180] (4,2) node[below] {Intermediate} to[out=0,in=180] (5,2.5) node[above] {Transition State} to[out=0,in=180] (6.5,1.25) -- (7,1.25) node[below left] {Products};
+    \end{tikzpicture}
+    \caption{Multi-step Reaction Energy Diagram}
+    \label{fig:MultiStepReactionEnergyDiagram}
+\end{figure}
+The highest peak corresponds to the step with the highest activation energy, which is the rate determining step. In figure \ref{fig:MultiStepReactionEnergyDiagram} the first step is the rate determining step since it has the highest activation energy.
+\subsection{The Rate Law}
+\subsubsection{Differential Rate Laws}
+A rate law is an equation that relates the rate of a reaction to the concentrations of the reactants. The general form of a rate law for the elementary reaction \ce{mA + nB -> pC + qD} is as follows;
+\begin{equation}\label{eq:rateLaw}
+    \text{Rate} = k[A]^m[B]^n
+\end{equation}
+It is important to note that the exponents in the rate law are not necessarily the same as the coefficients in the balanced chemical equation, but instead come from the coefficients of the rate determining step in the mechanism. The value $k$ is a constant called the rate constant, which is specific to a particular reaction at a given temperature. 
+
+For those who are familiar with calculus, the rate of a reaction can also be expressed as the derivative of the concentration of a reactant or product with respect to time. For example, for the reaction \ce{A -> B} the rate can be expressed as
+\begin{equation}\label{eq:differentialRateLaw}
+    \text{Rate} = -\frac{d[A]}{dt} = \frac{d[B]}{dt} = k[A]^m
+\end{equation}
+This is why these are called the differential rate laws, because they take the form of a derivative.
+
+\subsubsection{Molecularity and Reaction Order}
+The molecularity of an elementary reaction is the number of reactant particles that are involved in the reaction. A unimolecular reaction involves one reactant particle, a bimolecular reaction involves two reactant particles, and a termolecular reaction involves three reactant particles. It is very rare to have reactions with a molecularity greater than three. The order of a reaction is the sum of the exponents in the rate law for the overall reaction. A zero order reaction has a constant rate, a first order reaction has a rate that is directly proportional to the concentration of one reactant, and a second order reaction has a rate that is proportional to the square of the concentration of one reactant or the product of the concentrations of two reactants.
+
+The order of a reactant can be found by comparing how the change to an initial concentration of a reactant affects the rate of the reaction. For example, if doubling the concentration of a reactant causes the rate to double, then the reaction is first order with respect to that reactant. If doubling the concentration causes the rate to quadruple, then the reaction is second order with respect to that reactant. If changing the concentration has no effect on the rate, then the reaction is zero order with respect to that reactant.
+
+\subsubsection{Integrated Rate Laws}
+The integrated rate law is an equation that relates the concentration of a reactant to time. The equation itself is based on the order of the reaction. For a zero order reaction, the integrated rate law is as follows;
+\begin{equation}\label{eq:zeroOrder}
+    [A] = -kt + [A]_0
+\end{equation}
+For a first order reaction, the integrated rate law is as follows;
+\begin{equation}\label{eq:firstOrder}
+    \ln{[A]} = -kt + \ln{[A]_0}
+\end{equation}
+For a second order reaction, the integrated rate law is as follows;
+\begin{equation}\label{eq:secondOrder}
+    \frac{1}{[A]} = kt + \frac{1}{[A]_0}
+\end{equation}
+Where $[A]_0$ is the initial concentration of the reactant. These equations can be used to determine the concentration of a reactant at any given time, or to determine the rate constant $k$ if the concentration at different times is known.
+
+For those who are familiar with calculus, the integrated rate laws can be derived by using separation of variables to integrate the differential rate laws. 
+
+We can also use the integrated rate laws to determine the order of a reaction by plotting the appropriate graph and seeing if it is linear. For example, if a plot of $[A]$ vs time is linear, then the reaction is zero order. If a plot of $\ln{[A]}$ vs time is linear, then the reaction is first order. If a plot of $1/[A]$ vs time is linear, then the reaction is second order.
+\subsubsection{Half Life}
+The half life of a reaction is the time it takes for the concentration of a reactant to decrease by half. The half life of a reaction can be determined from the integrated rate law. For a zero order reaction, the half life is given by
+\begin{equation}\label{eq:halfLifeZero}
+    t_{1/2} = \frac{[A]_0}{2k}
+\end{equation}
+For a first order reaction, the half life is given by
+\begin{equation}\label{eq:halfLifeFirst}
+    t_{1/2} = \frac{\ln{2}}{k}
+\end{equation}
+For a second order reaction, the half life is given by
+\begin{equation}\label{eq:halfLifeSecond}
+    t_{1/2} = \frac{1}{k[A]_0}
+\end{equation}
+\subsection{Arrhenius Equation}
+The Arrhenius equation is a mathematical equation that describes the relationship between the rate constant of a reaction, the activation energy, and the temperature. The Arrhenius equation is not needed for the AP exam, but it is a useful equation to know for understanding how temperature affects the rate of a reaction. The Arrhenius equation is as follows;
+\begin{equation}\label{eq:arrhenius1}
+    k = Ae^{-\frac{E_a}{RT}}
+\end{equation}
+Where $A$ is the frequency factor, $E_a$ is the activation energy, $R$ is the gas constant, and $T$ is the temperature in Kelvin. The Arrhenius equation shows that as the temperature increases, the rate constant $k$ increases, which means that the rate of the reaction increases. 
+Another common form of the Arrhenius equation is
+\begin{equation}\label{eq:arrhenius2}
+    \ln{k} = \ln{A} - \frac{E_a}{RT}
+\end{equation}
+This form of the equation is useful for plotting $\ln{k}$ vs $1/T$, which will yield a straight line with a slope of $-E_a/R$ and a y-intercept of $\ln{A}$.
+To find the rate constant at a different temperature, we can use the following form of the Arrhenius equation;
+\begin{equation}\label{eq:arrhenius3}
+    \ln{\left(\frac{k_2}{k_1}\right)} = -\frac{E_a}{R}\left(\frac{1}{T_2} - \frac{1}{T_1}\right)
+\end{equation}
+Where $k_1$ and $k_2$ are the rate constants at temperatures $T_1$ and $T_2$ respectively.
+

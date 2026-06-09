@@ -1,0 +1,100 @@
+\documentclass[10pt,letterpaper,titlepage,twocolumn]{article}
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage{amsthm}
+\usepackage{polynom}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+\usepackage{array}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{supertabular}
+\usepackage{graphics}
+\graphicspath{ {./images/} }
+\numberwithin{equation}{section}
+\usepackage{modiagram}
+% \usepackage{chemmacros}
+\usepackage{siunitx,physics}
+\usepackage{tikz}
+\tikzset{>=latex} % for LaTeX arrow head
+\usepackage{pgfplots} % for the axis environment
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{ifthen}
+\usepackage{siunitx}
+\usepackage{pifont}
+\usetikzlibrary{hobby} % for ..
+\usetikzlibrary{calc,intersections,decorations.markings}
+\usetikzlibrary{3d,perspective}
+\newcommand{\cmark}{\color{green!50!black}\ding{51}}%
+\newcommand{\xmark}{\color{red!80!black}\ding{55}}%
+
+\colorlet{mygreen}{green!60!black}
+\colorlet{myblue}{blue!70!black}
+\colorlet{myred}{red!70!black}
+\colorlet{mylightblue}{blue!20}
+\colorlet{mydarkblue}{blue!30!black}
+\colorlet{mylightred}{red!10}    
+\colorlet{mydarkred}{red!60!black}
+\colorlet{mydarkgreen}{green!30!black}
+
+\tikzstyle{rline}=[myred,thick]
+\tikzstyle{bline}=[myblue,thick]
+\tikzstyle{gline}=[mygreen,thick]
+\pgfplotsset{compat=1.13} % TikZ coordinates <-> axes coordinates
+\def\N{50}
+
+\pgfmathdeclarefunction{maxwell}{2}{%
+  \pgfmathparse{4/sqrt(pi)*(\k/#2)^(3/2)*(#1^2)*exp(-\k*(#1^2)/#2)}%
+}
+\def\maxwell#1#2{4/sqrt(pi)*(\k/#2)^(3/2)*((\xscale*#1)^2)*exp(-((\xscale*#1)^2)*(\k/#2))}
+%\def\vmax#1{sqrt(#1/\k)/\xscale}
+\def\tick#1#2{\draw[thick] (#1) ++ (#2:0.03*\ymax) --++ (#2-180:0.06*\ymax)}
+
+\tikzset{
+  midarr/.style={decoration={markings,mark=at position #1 with {\arrow{stealth}}},postaction={decorate}},
+  midarr/.default=0.5
+}
+
+\tikzset
+{% styles
+   xy/.style={canvas is xy plane at z=\a,shift={(0.5*\a,0.5*\a)},fill=cyan!30},
+   xz/.style={canvas is xz plane at y=\a,shift={(0.5*\a,0.5*\a)},fill=cyan!50},
+   yz/.style={canvas is yz plane at x=\a,shift={(0.5*\a,0.5*\a)},fill=cyan!70},
+   my ball/.style={shading=ball,ball color=blue!50}
+}
+
+\begin{document}
+\title{AP Chemistry\\[1ex] \large All of It}
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+\input{Section1_ChemCore.tex}
+\input{Section2_Reactions.tex}
+\input{Section3_Kinetics.tex}
+\input{Section4_Equilibrium.tex}
+\input{Section5_Aqueous.tex}
+\input{Section6_Thermo.tex}
+\input{Section7_Electro.tex}
+\input{Section8_APAtom.tex}
+\input{Section9_StatesOfMatter.tex}
+\input{Section10_ExtraInformation.tex}
+\clearpage
+\appendix
+\include{AppendixA_CommonMisconceptions.tex}
+\include{AppendixB_Equations.tex}
+\include{AppendixC_Tables.tex}
+\clearpage
+\section*{About this Document}
+This document is a compilation of all the notes made from the teachers slides presentations in addition to figures, equations, explanations, tables and more from me and other sources. The goal I have is for this document to be a comprehensive review of all the material covered in AP Chemistry, and to be a living document that can be updated and added on to. For this the source code is available on \textbf{GitHub} at https://github.com/EnderBuilds/APChemistryPacket, where you are free to contribute by adding more information, fixing errors, improving formatting and more. If you have any questions or suggestions, feel free to reach out. I hope that this document had something to offer, weather it be a new way to understand a concept, a useful figure, or just a comprehensive review of the material. I wish you good luck on your journey through AP Chemistry.\\
+Sincerely,\\
+The Author
+\end{document}

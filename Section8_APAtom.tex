@@ -1,0 +1,446 @@
+\section{AP Atom}
+\subsection{Atomic Theory and Quantum Mechanics}
+\subsubsection{Models of the Atom}\label{sec:atomModels}
+The first main atomic theory was proposed by John Dalton in the early 19th century, which described atoms as indivisible particles. He came up with 4 main laws of atomic theory:
+\begin{itemize}
+    \item All matter is made of atoms, which are indivisible and indestructible.
+    \item All atoms of a given element are identical in mass and properties.
+    \item Atoms of one element can not be changed into atoms of another element by chemical reactions, and they can not be created or destroyed in chemical reactions.
+    \item Compounds are formed when atoms of different elements combine in fixed ratios.
+\end{itemize}
+This was then improved upon by J.J. Thomson, who discovered the electron and proposed the "plum pudding" model of the atom, where electrons were embedded in a positively charged "pudding". However, this model was disproven by Ernest Rutherford's gold foil experiment, which led to the nuclear model of the atom, where a small, dense nucleus is surrounded by electrons.
+
+It was later refined by Niels Böhr, who proposed that electrons orbit the nucleus in specific energy levels or shells. This model explained the discrete spectral lines of hydrogen but failed to account for more complex atoms. The model he proposed left him with more questions than answers, such as why electrons do not spiral into the nucleus and how to explain the spectra of atoms with more than one electron.
+
+The model Böhr proposed had several planet like orbits at specific energy levels for the electrons. Each one of these energy levels was given a quantum number $n$, and electrons could jump between these energy levels by absorbing or emitting photons of specific energies. The equation he came up to describe this was:
+\begin{equation}\label{eq:bohr}
+    E_n = -2.178 \times 10^{-18} \frac{Z^2}{n^2} \text{ J}
+\end{equation}
+where $E_n$ is the energy of the electron at a specific energy level, $Z$ is the atomic number, and $n$ is the principal quantum number. This equation successfully explained the spectral lines of hydrogen but could not account for more complex atoms or the behavior of electrons in multi-electron systems.
+
+De Broglie hypothesized that particles, such as electrons, could exhibit wave-like properties. He proposed that the wavelength of a particle is inversely proportional to its momentum, given by the equation:
+\begin{equation}\label{eq:debroglie}
+    \lambda = \frac{h}{mv}
+\end{equation}
+where $\lambda$ is the wavelength, $h$ is Planck's constant, $m$ is the mass of the particle, and $v$ is its velocity.
+
+It was then found that electron beams exhibited wave-like properties, specifically diffraction and interference patterns. The photoelectric effect, observed by Albert Einstein, provided evidence for the quantization of energy and the particle-like nature of light. Only certain energy levels are allowed for electrons in an atom, and electrons can transition between these levels by absorbing or emitting photons of specific energies. This explains the discrete spectral lines observed in atomic spectra.
+
+Heisenberg then presented his uncertainty principle, which states that it is impossible to simultaneously know both the exact position and momentum of a particle. This is expressed mathematically as:
+\begin{equation}\label{eq:heisenberg}
+    \Delta x \Delta p \geq \frac{h}{4\pi}
+\end{equation}
+where $\Delta x$ is the uncertainty in position and $\Delta p$ is the uncertainty in momentum. 
+
+The culmination of these discoveries led to the development of quantum mechanics, which provides a more comprehensive and accurate description of atomic and subatomic phenomena. The Schrödinger equation, a fundamental equation in quantum mechanics, describes how the quantum state of a physical system changes over time. It is given by:
+\begin{equation}\label{eq:schrodinger}
+    i\hbar \frac{\partial}{\partial t} \Psi(\mathbf{r}, t) = \hat{H} \Psi(\mathbf{r}, t)
+\end{equation}
+You do not need to know the structure of the Schrödinger equation, but it is important to understand the implications of quantum mechanics.
+\subsubsection{Quantum Numbers}
+What the equation tells us is that there is a principal quantum number $n$ that describes the energy level of an electron in an atom. In addition there is an orbital quantum number $l$ that describes the shape of the orbital, a magnetic quantum number $m_l$ that describes the orientation of the orbital in space, and a spin quantum number $m_s$ that describes the intrinsic angular momentum of the electron. The values of these numbers are as follows:
+\begin{itemize}
+    \item $n\in\mathbb{N}\quad(1,2,3,\dots)$
+    \item $0 \le l < n$
+    \item $-l \le m_l \le l$
+    \item $m_s$ can be either +1/2 or -1/2
+\end{itemize}
+\subsubsection{Electron Configuration}
+Electrons fill orbitals in a specific order based on their energy levels, following the Pauli exclusion principle, Hund's rule, and the Aufbau principle. The Pauli exclusion principle states that no two electrons can have the same set of quantum numbers, meaning that an orbital can hold a maximum of two electrons with opposite spins. Hund's rule states that electrons will fill degenerate orbitals (orbitals with the same energy) singly before pairing up. The Aufbau principle states that electrons occupy the lowest energy orbitals first. This leads to the electron configuration of atoms, which describes the distribution of electrons in the various orbitals. We write the electron configuration of an atom using the notation $n\ell^x$, where $n$ is the principal quantum number, $\ell$ is the type of orbital (s, p, d, f), and $x$ is the number of electrons in that orbital. For example, the electron configuration of carbon (atomic number 6) is $1s^2 2s^2 2p^2$, which means it has 2 electrons in the 1s orbital, 2 electrons in the 2s orbital, and 2 electrons in the 2p orbital.
+
+An excited state of an atom occurs when one or more electrons are promoted to higher energy levels than their ground state configuration. This can happen when an atom absorbs energy, such as from heat or light. For example, if a carbon atom absorbs energy, one of its 2s electrons could be promoted to the 2p orbital, resulting in an excited state with the configuration $1s^2 2s^1 2p^3$. Excited states are typically unstable and will eventually return to the ground state by emitting energy in the form of photons.
+
+Sometimes the electron configuration may be written in a condensed form using the noble gas notation. This involves using the symbol of the nearest noble gas that comes before the element in the periodic table to represent the inner electron configuration. For example, the electron configuration of sodium (atomic number 11) can be written as $[Ne] 3s^1$, where $[Ne]$ represents the electron configuration of neon ($1s^2 2s^2 2p^6$). This notation is often used to simplify the representation of electron configurations for elements with many electrons.
+
+There are two weird exceptions to the expected electron configurations based. A filled $3d$ subshell is more stable than a filled $4s$ subshell, and the $xf^1$ configuration is more stable than the $x-1d^9$ configuration. This means that for elements like chromium (atomic number 24) and copper (atomic number 29), the expected electron configurations would be $[Ar] 4s^2 3d^4$ and $[Ar] 4s^2 3d^9$, respectively. However, due to the increased stability of a filled $3d$ subshell, the actual electron configurations are $[Ar] 4s^1 3d^5$ for chromium and $[Ar] 4s^1 3d^{10}$ for copper.
+
+When writing the electron configuration of an ion, we need to account for the loss or gain of electrons. For cations (positively charged ions), we remove electrons starting from the highest energy level. This is not necessarily the last orbital filled, but rather the orbital with the highest principal quantum number. Anions (negatively charged ions) gain electrons, and we add electrons to the next available orbital following the same order as for neutral atoms. 
+\subsection{The Periodic Table}
+\subsubsection{Organization}
+The periodic table is organized into three main groups: metals, nonmetals, and metalloids. Metals are typically found on the left side and center of the periodic table, while nonmetals are located on the right side. Metalloids have properties that are intermediate between metals and nonmetals and are found along the zigzag line that separates metals and nonmetals.
+
+There are several families of elements in the periodic table, including alkali metals (Group 1), alkaline earth metals (Group 2), transition metals (Groups 3-12), halogens (Group 17), and noble gases (Group 18). Each family has distinct properties and trends in their chemical behavior.
+\subsubsection{Metals vs Nonmetals}
+Metals have very high attractive forces between their individual atoms, which results in their electrons being demoralized and free to move throughout the metal lattice. The effect of this is that metals are good conductors of electricity and heat. Metals are also malleable and ductile, meaning they can be hammered into thin sheets or drawn into wires without breaking. They also have high melting and boiling points due to the strong metallic bonds between atoms. They tend to form positive ions (cations) by losing electrons in reactions.
+
+Nonmetals, on the other hand, have weaker attractive forces between their atoms, which results in their electrons being more localized and less free to move. This makes nonmetals poor conductors of electricity and heat. Nonmetals are also brittle and tend to break rather than deform when subjected to stress. They generally have lower melting and boiling points compared to metals. Nonmetals tend to form negative ions (anions) by gaining electrons in reactions.
+\subsubsection{Effective Nuclear Charge}
+All the periodic trends are based on the electron's attraction to the nucleus. Every electron is independently attracted to the nucleus, but they are also repelled by other electrons. The effective nuclear charge ($Z_{\text{eff}}$) is the net positive charge experienced by an electron in a multi-electron atom. It can be calculated using the formula:
+\begin{equation}\label{eq:zeff}
+    Z_{\text{eff}} = Z - S
+\end{equation}
+where $Z$ is the atomic number and $S$ is the shielding constant. Usually, the shielding constant will be approximately equal to the number of inner electrons, as they are more effective at shielding the outer electrons from the nucleus. It is possible that some AP tests will ask you to use other conventions for calculating the shielding constant, such as assigning different values for electrons in different orbitals. 
+\subsubsection{Periodic Trends}
+Atomic radius or bonding radius is half the distance between two bound atoms. As you move down a group in the periodic table, the atomic radius increases due to the addition of electron shells while the effective nuclear charge remains relatively constant. As you move across a period from left to right, the atomic radius decreases because the effective nuclear charge increases, pulling the electrons closer to the nucleus.
+
+Ionization energy is the energy required to remove an electron from an atom. As you move down a group, ionization energy decreases because the outer electrons are farther from the nucleus and are more shielded by inner electrons. As you move across a period from left to right, ionization energy increases due to the increasing effective nuclear charge, which holds the electrons more tightly.
+
+Electron Affinity is the energy change that occurs when an electron is added to a neutral atom. As you move down a group, electron affinity generally becomes less negative (or more positive) because the added electron is farther from the nucleus and experiences more shielding. As you move across a period from left to right, electron affinity generally becomes more negative (or less positive) due to the increasing effective nuclear charge, which attracts the added electron more strongly. 
+
+Electronegativity is a measure of an atom's ability to attract and hold onto electrons in a chemical bond. As you move down a group, electronegativity decreases because the outer electrons are farther from the nucleus and are more shielded by inner electrons. As you move across a period from left to right, electronegativity increases due to the increasing effective nuclear charge, which attracts the bonding electrons more strongly. The difference in electronegativity between two atoms can be used to predict the type of bond that will form between them. If the difference is less than 0.5, the bond is generally considered nonpolar covalent. If the difference is between 0.5 and 1.7, the bond is generally considered polar covalent. If the difference is greater than 1.7, the bond is generally considered ionic.
+\subsection{Bonding and Energy Levels}
+There are three main types of chemical bonds: ionic, covalent, and metallic. Ionic bonds form when one atom donates an electron to another atom, resulting in the formation of positively charged cations and negatively charged anions that are held together by electrostatic forces. Covalent bonds form when two atoms share electrons to achieve a full outer shell, resulting in the formation of molecules. Metallic bonds occur between metal atoms, where the valence electrons are delocalized and free to move throughout the metal lattice, creating a ``sea of electrons'' that holds the metal atoms together.
+\subsubsection{Lewis Structures}
+In Lewis structures, we represent atoms as symbols and valence electrons as dots around the symbols with bonds represented with lines. Below is an example of a Lewis structure for water (\ce{H2O}):
+\begin{figure}[ht]
+    \centering
+    $\chemfig{H-[:0,0.6]\charge{90=\:,-90=\:}{O}-[:0,0.6]H}$
+    \caption{Lewis structure for water}
+\end{figure}
+When drawing Lewis structures, remember hund's rule and the octet rule. The octet rule states that atoms tend to form bonds in such a way that they have eight electrons in their valence shell. Hund's rule states that electrons will fill degenerate orbitals singly before pairing up. When drawing Lewis structures, we first determine the total number of valence electrons in the molecule, then we arrange the atoms and distribute the electrons to satisfy the octet rule for each atom. If there are not enough electrons to satisfy the octet rule, we can form double or triple bonds by sharing more than one pair of electrons between atoms. 
+\begin{figure}[H]
+    \centering
+    $\chemfig{\charge{90=\.,-90=\.,0=\.,180=\.}{C}}$
+    \quad$\chemfig{\charge{90=\:,-90=\.}{C}}$
+    \caption{Correct and Incorrect Lewis structure for Carbon}
+    \label{fig:lewisCarbon}
+\end{figure}
+In figure \ref{fig:lewisCarbon}, the left structure is correct because it follows Hund's rule while the right structure is incorrect because it violates Hund's rule by pairing up an extra pair of electrons before filling the left orbital.
+
+If a bond's polarity is greater than 1.67, then the electrons are not shared, and that must be reflected in the diagram by drawing the two atoms separately and writing the charge on each atom. 
+\subsubsection{Formal Charge}
+Formal charge is a way of measuring how stable a molecule's structure is based on the distribution of electrons. It is calculated using the formula:
+\begin{equation}\label{eq:formalCharge}
+    C = \ce{e-}_\text{valence} - \ce{e-}_\text{non-bonding} - \frac{1}{2} \times \ce{e-}_\text{bonding}
+\end{equation}
+Where $C$ is the formal charge, $\ce{e-}_\text{valence}$ is the number of valence electrons in the free atom, $\ce{e-}_\text{non-bonding}$ is the number of non-bonding electrons around the atom in the molecule, and $\ce{e-}_\text{bonding}$ is the number of electrons shared in bonds with other atoms.
+Since every bond consists of two electrons, the number of bonding electrons is simply twice the number of bonds and so this formula can be simplified to:
+\begin{equation}\label{eq:formalChargeSimplified}
+    C = \ce{e-}_\text{valence} - \ce{e-}_\text{non-bonding} - n_\text{bonds}
+\end{equation}
+Where $C$, $\ce{e-}_\text{valence}$, and $\ce{e-}_\text{non-bonding}$ are the same as before, and $n_\text{bonds}$ is the number of bonds the atom forms with other atoms in the molecule.
+The most stable Lewis structures have all atoms obeying the octet rule and a formal charge of zero. If this can not be achieved, then the most stable structures have the smallest sum of formal charges and any negative formal charges are placed on the most electronegative atoms.
+\begin{figure}[H]\label{fig:formalChargeCO2}
+    \centering
+    \schemestart
+    $\chemfig{\charge{90=\:,-90=\:}{O}=C=\charge{90=\:,-90=\:}{O}}$
+    \arrow{0}
+    $\chemfig{\charge{90=\:,-90=\:,180=\.}{O}-C~\charge{90=\:,-90=\.}{O}}$
+    \schemestop
+    \caption{Formal charge for carbon dioxide. The left structure has a formal charge of zero for all atoms, while the right structure has a formal charge of +1 for the right oxygen and -1 for the left oxygen, making the left structure more stable.}
+\end{figure}
+\subsubsection{Resonance}
+When two lewis structures can be drawn for a molecule, the molecule exists in a state between both called a resonance structure. In a resonance structure, the molecules are constantly switching between the possible structures and we represent this by drawing all the possible structures and connecting them with double-headed arrows. 
+\begin{figure*}[t]
+    \centering
+        \schemestart
+        $\chemleft[\chemfig{\charge{0=\:,-90=\:,180=\:}{O}-[:30]C(-[:90]\charge{0=\:,90=\:,180=\:}{O})(=[:-30]\charge{0=\:,-90=\:}{O})}\chemright]^{-2}$
+        \arrow{<->}
+        $\chemleft[\chemfig{\charge{0=\:,-90=\:,180=\:}{O}-[:30]C(=[:90]\charge{0=\:,180=\:}{O})(-[:-30]\charge{0=\:,-90=\:,180=\:}{O})}\chemright]^{-2}$
+        \arrow{<->}
+        $\chemleft[\chemfig{\charge{-90=\:,180=\:}{O}=[:30]C(-[:90]\charge{0=\:,90=\:,180=\:}{O})(-[:-30]\charge{0=\:,-90=\:,180=\:}{O})}\chemright]^{-2}$
+        \schemestop
+    \caption{Resonance structures for carbonate ion}
+    \label{fig:resonanceCarbonate}
+\end{figure*}
+An example of a resonance structure with three possible structures is the carbonate ion (\ce{CO3^2-}) which can be seen in figure \ref{fig:resonanceCarbonate}. 
+
+It is possible for one or more of the possible resonance structures to be favored. This is when the formal charges are minimized and/or a lack of ions. When this happens, at any given moment the molecule is more likely to be in the dominant structure. 
+\subsubsection{Exceptions to the Octet Rule}
+There are several situations where the Octet rules is broken, but in general there are three main exceptions to the octet rule.
+
+The first exception is when an atom has more than 8 electrons in its valence shell, which most commonly occurs with elements in period 3 and beyond. Commonly the elements sulfur, phosphorus, and xenon. This is because these elements have available d-orbitals that can interact and form bonds. In these molecules there are usually several highly electronegative atoms, such as fluorine or chlorine, bonded to the central atom.
+\begin{figure}[h]
+    \centering
+    \schemestart
+    $\chemfig{\charge{0=\:,-90=\:,180=\:}{F}-[:60]S(-[:-60]\charge{0=\:,-90=\:,180=\:}{F})(-[:180]\charge{90=\:,-90=\:,180=\:}{F})(-[:0]\charge{90=\:,-90=\:,0=\:}{F})(-[:60]\charge{90=\:,180=\:,0=\:}{F})(-[:120]\charge{90=\:,180=\:,0=\:}{F})}$
+    \arrow{0}
+    $\chemfig{\charge{-45=\:,135=\:,-135=\:}{F}-[:45]\charge{-90=\:,90=\:}{Xe}(-[:45]\charge{-45=\:,135=\:,45=\:}{F})(-[:-45]\charge{-45=\:,45=\:,-135=\:}{F})(-[:135]\charge{45=\:,135=\:,-135=\:}{F})}$
+    \schemestop
+    \caption{Lewis structure for sulfur hexafluoride ($\ce{SF6}$) and xenon tetrafluoride ($\ce{XeF4}$), which both have expanded octets.}
+    \label{fig:expandedOctet}
+\end{figure}
+
+The second exception is when an atom has less than 8 electrons in its valence shell. While this is less common in reality, it is more common on the AP test. The elements that most commonly form these exceptions are boron and beryllium but other elements include hydrogen and many transition metals. 
+
+The third exception is when an atom has an odd number of electrons in its valence shell, which is also known as a free radical. These molecules are usually very reactive due to the presence of an unpaired electron. Free radicals are different from radicals in that radicals are any species with an unpaired electron, while free radicals are specifically those that have an odd number of electrons in their valence shell. There are very few molecules that have an odd number of electrons, but the most common one is nitric oxide (\ce{NO}), which has 11 valence electrons.
+\begin{figure}[h]\label{fig:freeRadical}
+    \centering
+    $\chemfig{\charge{90=\.,-90=\:}{N}=\charge{90=\:,-90=\:}{O}}$
+    \caption{Lewis structure for nitric oxide, which is a free radical with an odd number of electrons.}
+\end{figure}
+\subsubsection{Coordinate Covalent Bonds}
+A coordinate covalent bond is a bond that forms when one atom uses both of its electrons to form a bond with another atom. This type of bond is what also makes lewis acids and bases (Section \ref{sec:lewis_acids_bases}), as one compound donates a pair of electrons to another compound. 
+\begin{figure}[h]\label{fig:coordinateBond}
+    \centering
+    \hreac
+    $\chemfig{H-\charge{0=\:}{N}(-[:90]H)(-[:-90]H)}$
+    +
+    $\chemfig{H}^{+}$
+    >
+    $\chemleft[\chemfig{H-N(-[:90]H)(-H)(-[:-90]H)}\chemright]^{+}$
+    \endhreac
+    \caption{Reaction between \ce{NH3} and \ce{H+}. Ammonia is a Lewis base because it donates a pair of electrons by forming a coordinate bond with the hydrogen ion}
+\end{figure}
+\subsubsection{Dipole Moments and Polarity}
+When there is a difference in electronegativity between two atoms in a bond, the electrons in that bond become unequally shared. The more electronegative an atom is the more it pulls on the electrons in a bond. The effect of this unequal spread of electrons, is an unequal distribution of charge which results in a dipole moment. A dipole moment is a measure of the separation of positive and negative charges in a molecule. It is represented by the symbol $\mu$ and is calculated using the formula:
+\begin{equation}\label{eq:dipoleMoment}
+    \mu = r \times \Delta q
+\end{equation}
+Where $r$ is the distance between the centers of positive and negative charge, and $\Delta q$ is the magnitude of the difference in charge. 
+\subsubsection{Bond Energy and Orders}
+The energy of a bond depends on the type of bond and the atoms being bonded. In the course of a reaction, bonds are broken and formed, releasing and absorbing energy as they do so. In order to break a bond, energy must be absorbed to overcome the attractive forces between the atoms. When bonds are formed, energy is released as the atoms come together and form a more stable configuration. The difference of the energy required to break the bonds of the reactants, and the energy released by the formation of the bonds of the products, is the heat of reaction. With this we can use bond energies to calculate the heat of reaction using the formula:
+\begin{equation}\label{eq:bondEnergy}
+    \Delta H = \sum E_\text{bonds broken} - \sum E_\text{bonds formed}
+\end{equation}
+
+This formula is very similar to the formula for calculating the heat of reaction using enthalpies in section \ref{sec:enthalpy}.
+
+The order of a bond is the number of shared electron pairs between two atoms. A single bond has a bond order of 1, a double bond has a bond order of 2, and a triple bond has a bond order of 3. In resonance structures, the bond order is the average order that the bond has across all resonance structures. 
+\subsection{Molecular Geometry and Advanced Bonding}
+\subsubsection{VSEPR Theory}
+VSEPR stands for Valence Shell Electron Pair Repulsion theory which is a model used to predict the geometry of molecules based on the repulsion between electron pairs in the valence shell of the central atom. The main ideas of VSEPR theory are that the electrons wish to be as far apart as possible, bonded and unbonded electron pairs take up space, unbonded electron pairs take up more space than bonded electron pairs, and that the geometry uses the the total number of electron pairs.
+\subsubsection{Molecular vs Electron Geometry}
+Molecular geometry describes the shape of a molecule based on the positions of the atoms, while electron geometry describes the arrangement of all electron pairs (bonding and non-bonding) around the central atom. Since non-bonding electron pairs still take up space, they can affect the molecular geometry by pushing the bonded atoms closer together. 
+\subsubsection{Molecular Geometries of VSEPR}
+Given the assumptions of VSEPR theory, we are left with a set of three dimensional shapes that follow these rules closest. There are 5 main shapes that represent the geometries for most molecules: Linear, Trigonal Planar, Tetrahedral, Trigonal Pyramidal, and Bent. 
+With this, it is important to note that all bond orders are treated as single bonds, and that the presence of double or triple bonds does not affect the geometry of the molecule. 
+
+The other shapes that can exist come from molecules with more than 4 electron pairs, which means that they break the octet rule. For species with more than 8 electrons, there are additionally See-Saw, Trigonal Bipyramidal, T-shaped, Square Pyramidal, Octahedral, and Square Planar geometries. 
+
+The shape of a molecule is not only determined by the number of electron pairs, but also by the presence of any non-bonding electron pairs. 
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Geometry & Pairs & Lone Pairs \\
+        \hline
+        Linear & 2 & 0 \\
+        Trigonal Planar & 3 & 0 \\
+        Tetrahedral & 4 & 0 \\
+        Trigonal Pyramidal & 4 & 1 \\
+        Bent & 4 & 2 \\
+        See-Saw & 5 & 1 \\
+        Trigonal Bipyramidal & 5 & 0 \\
+        T-shaped & 5 & 2 \\
+        Linear & 5 & 3 \\
+        Square Pyramidal & 6 & 1 \\
+        Octahedral & 6 & 0 \\
+        Square Planar & 6 & 2 \\
+        \hline
+    \end{tabular}
+    \caption{Molecular geometries for different numbers of electron pairs. }
+\end{table}
+\subsubsection{Electrondomain Geometries of VSEPR}
+Unlike molecular geometries, electrondomain geometries do not rely on the number of non-bonding vs. bonding electron pairs, and instead only rely on the total number of electron pairs/bonds. Given the number of electron pairs, the electrondomain geometry is as follows: linear, trigonal planar, tetrahedral, trigonal bipyramidal, and octahedral.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        Geometry & \ce{e-} Pairs \\
+        \hline
+        Linear & 2 \\
+        Trigonal Planar & 3 \\
+        Tetrahedral & 4 \\
+        Trigonal Bipyramidal & 5 \\
+        Octahedral & 6 \\
+        \hline
+    \end{tabular}
+    \caption{Electrondomain geometries for different numbers of electron pairs. }
+\end{table}
+Given the electrondomain geometry, we can determine the molecular geometry by looking at the number of bonds. 
+\begin{table*}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \ce{e-} Geometry & Bonds & Molecular \\
+        \hline
+        Linear & 2 & Linear \\
+        Trigonal Planar & 3 & Trigonal Planar \\
+        Trigonal Planar & 2 & Bent \\
+        Tetrahedral & 4 & Tetrahedral \\
+        Tetrahedral & 3 & Trigonal Pyramidal \\
+        Tetrahedral & 2 & Bent \\
+        Trigonal Bipyramidal & 5 & Trigonal Bipyramidal \\
+        Trigonal Bipyramidal & 4 & See-Saw \\
+        Trigonal Bipyramidal & 3 & T-Shaped \\
+        Trigonal Bipyramidal & 2 & Linear \\
+        Octahedral & 6 & Octahedral \\
+        Octahedral & 5 & Square Pyramidal \\
+        Octahedral & 4 & Square Planar \\
+        Octahedral & 3 & T-Shaped \\
+        Octahedral & 2 & Linear \\
+        \hline
+    \end{tabular}
+    \caption{Relationship between electrondomain geometry, number of bonds, and molecular geometry.}
+\end{table*}
+\subsubsection{Linear Molecular Geometry}
+The linear molecular geometry occurs when there are two electron pairs around the central atom, and both of them are bonding pairs. The bond angle in a linear molecule is 180\textdegree . In addition, the linear geometry can also occur when there are five electron pairs around the central atom, with three of them being lone pairs or when there are six electron pairs around the central atom, with four of them being lone pairs. In both of these cases, the bond angle is also 180\textdegree .
+\begin{figure*}[h]
+    \centering
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Screenshot 2026-06-05 at 10.13.02 PM.png}
+        \caption{Linear geometry with a linear electron domain geometry.}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Screenshot 2026-06-05 at 10.13.30 PM.png}
+        \caption{Linear geometry with a trigonal bipyramidal electron domain geometry.}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Screenshot 2026-06-05 at 10.13.34 PM.png}
+        \caption{Linear geometry with an octahedral electron domain geometry.}
+    \end{subfigure}
+    \caption{Examples of linear molecular geometries.}
+\end{figure*}
+\subsubsection{Trigonal Planar Molecular Geometry}
+The trigonal planar molecular geometry occurs when there are three electron pairs around the central atom, and all of them are bonding pairs. The bond angle in a trigonal planar molecule is 120\textdegree .
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.25.31 PM.png}
+    \caption{Trigonal planar geometry with a trigonal planar electron domain geometry.}
+\end{figure}
+\subsubsection{Tetrahedral Molecular Geometry}
+The tetrahedral molecular geometry occurs when there are four electron pairs around the central atom, and all of them are bonding pairs. The bond angle in a tetrahedral molecule is 109.5\textdegree .
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.28.15 PM.png}
+    \caption{Tetrahedral geometry with a tetrahedral electron domain geometry.}
+\end{figure}
+\subsubsection{Trigonal Pyramidal Molecular Geometry}
+The trigonal pyramidal molecular geometry occurs when there are four electron pairs around the central atom, and three of them are bonding pairs while one of them is a lone pair. The bond angle in a trigonal pyramidal molecule is less than 109.5\textdegree  due to the repulsion from the lone pair pushing the bonding pairs closer together.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.31.47 PM.png}
+    \caption{Trigonal pyramidal geometry with a tetrahedral electron domain geometry.}
+\end{figure}
+\subsubsection{Bent Molecular Geometry}
+The bent molecular geometry occurs when there are four electron pairs around the central atom, and two of them are bonding pairs while the other two are lone pairs. The bond angle in a bent molecule is less than 109.5\textdegree . The bent geometry can also occur when there are three electron pairs around the central atom, and two of them are bonding pairs while the other one is a lone pair. In this case, the bond angle is less than 120\textdegree . 
+\begin{figure*}[h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Screenshot 2026-06-05 at 10.33.31 PM.png}
+        \caption{Bent geometry with a tetrahedral electron domain geometry.}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Screenshot 2026-06-05 at 10.34.14 PM.png}
+        \caption{Bent geometry with a trigonal planar electron domain geometry.}
+    \end{subfigure}
+    \caption{Examples of bent molecular geometries.}
+\end{figure*}
+\subsubsection{See-Saw Molecular Geometry}
+The see-saw molecular geometry occurs when there are five electron pairs around the central atom, and four of them are bonding pairs while one of them is a lone pair. The bond angles in a see-saw molecule are less than 120\textdegree  for the equatorial bonds and less than 90\textdegree  for the axial bonds. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.43.30 PM.png}
+    \caption{See-saw geometry with a trigonal bipyramidal electron domain geometry.}
+\end{figure}
+\subsubsection{Trigonal Bipyramidal Molecular Geometry}
+The trigonal bipyramidal molecular geometry occurs when there are five electron pairs around the central atom, and all of them are bonding pairs. The bond angles in a trigonal bipyramidal molecule are 120\textdegree  for the equatorial bonds and 90\textdegree  for the axial bonds. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.44.57 PM.png}
+    \caption{Trigonal bipyramidal geometry with a trigonal bipyramidal electron domain geometry.}
+\end{figure}
+\subsubsection{T-Shaped Molecular Geometry}
+The T-shaped molecular geometry occurs when there are five electron pairs around the central atom, and three of them are bonding pairs while the other two are lone pairs. The bond angles in a T-shaped molecule are less than 90\textdegree .
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.45.53 PM.png}
+    \caption{T-shaped geometry with a trigonal bipyramidal electron domain geometry.}
+\end{figure}
+\subsubsection{Square Pyramidal Molecular Geometry}
+The square pyramidal molecular geometry occurs when there are six electron pairs around the central atom, and five of them are bonding pairs while one of them is a lone pair. The bond angles in a square pyramidal molecule are less than 90\textdegree  for the bonds in the square base and less than 90\textdegree  for the bond between the central atom and the apex of the pyramid. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.47.14 PM.png}
+    \caption{Square pyramidal geometry with an octahedral electron domain geometry.}
+\end{figure}
+\subsubsection{Octahedral Molecular Geometry}
+The octahedral molecular geometry occurs when there are six electron pairs around the central atom, and all of them are bonding pairs. The bond angles in an octahedral molecule are 90\textdegree  for all bonds. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.48.01 PM.png}
+    \caption{Octahedral geometry with an octahedral electron domain geometry.}
+\end{figure}
+\subsubsection{Square Planar Molecular Geometry}
+The square planar molecular geometry occurs when there are six electron pairs around the central atom, and four of them are bonding pairs while the other two are lone pairs. The bond angles in a square planar molecule are 90\textdegree  for all bonds. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2026-06-05 at 10.48.59 PM.png}
+    \caption{Square planar geometry with an octahedral electron domain geometry.}
+\end{figure}
+\subsubsection{Molecular Geometry and Polarity}
+The molecular geometry of a molecule can affect its polarity. A molecule is polar if it has a net dipole moment, which occurs when there is an uneven distribution of charge in the molecule. If a molecule has polar bonds but is symmetrical, the dipole moments can cancel out, resulting in a nonpolar molecule. 
+\subsubsection{Valence Bond Theory}
+Valence bond theory is a model used to describe the bonding in molecules based on the overlap of atomic orbitals. According to valence bond theory, a covalent bond forms when the atomic orbitals of two atoms overlap and the electrons in those orbitals are shared between the atoms. The strength of the bond depends on the extent of the overlap between the orbitals, with greater overlap resulting in a stronger bond. The bonding pair that forms between the nuclei of two atoms is called a sigma ($\sigma$) bond. When forming a double or triple bond, the additional bonds are called pi ($\pi$) bonds, which are formed by the side-to-side overlap of p orbitals. In order to make these bonds, atoms need to hybridize their orbitals to create new hybrid orbitals that can overlap more effectively. In this hybridized state, the atom has a lower energy and is more stable. The different hybridization states include $sp$, $sp^2$, and $sp^3$, which correspond to the number of electron pairs around the central atom and are linked to the electron domain geometry of the molecule.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Hybridization & \ce{e-} Pairs & Geometry \\
+        \hline
+        $sp$ & 2 & Linear \\
+        $sp^2$ & 3 & Trigonal Planar \\
+        $sp^3$ & 4 & Tetrahedral \\
+        $sp^3d$ & 5 & Trigonal Bipyramidal \\
+        $sp^3d^2$ & 6 & Octahedral \\
+        \hline
+    \end{tabular}
+    \caption{Relationship between hybridization, number of electron pairs, and geometry.}
+\end{table}
+\subsubsection{Molecular Orbital Theory}
+Molecular orbital theory is a model used to describe the bonding in molecules based on the combination of atomic orbitals to form molecular orbitals. According to molecular orbital theory, when two atoms come together to form a molecule, their atomic orbitals combine to form new molecular orbitals that are delocalized over the entire molecule. These orbitals are represented with diagrams that show the energy levels of the orbitals and the number of electrons in each orbital. 
+\begin{figure}[h]
+    \centering
+    \begin{modiagram}[style=square,labels,names,AO-width=8pt,labels-fs=\footnotesize]
+        \atom[\ce{H_a}]{right}{
+            1s = {;up}
+        }
+        \atom[\ce{H_b}]{left}{
+            1s = {;up}
+        }
+        \molecule[\ce{H2}]{
+            1sMO = {;pair}
+        }
+\EnergyAxis
+\end{modiagram}
+\caption{Molecular orbital diagram of \ce{H2}.}
+\end{figure}
+There are three types of molecular orbitals: bonding, antibonding, and nonbonding. Bonding orbitals are lower in energy than the original atomic orbitals, antibonding orbitals are higher in energy than the original atomic orbitals, and nonbonding orbitals have the same energy as the original atomic orbitals. The electrons in a molecule will fill the molecular orbitals in order of increasing energy, following the Pauli exclusion principle and Hund's rule. 
+\begin{figure}[h]
+    \centering
+    \begin{modiagram}[style=square,labels,names,AO-width=8pt,labels-fs=\footnotesize]
+        \atom[\ce{He_a}]{right}{
+            1s = {;pair}
+        }
+        \atom[\ce{He_b}]{left}{
+            1s = {;pair}
+        }
+        \molecule[\ce{He2}]{
+            1sMO = {;pair,pair},
+            color = { 1sigma*=red }
+        }
+        
+\EnergyAxis
+\end{modiagram}
+\caption{Molecular orbital diagram of \ce{He2}.}
+\label{fig:he2MO}
+\end{figure}
+In figure \ref{fig:he2MO}, we see that the \ce{He2} molecule has two electrons in the bonding orbital and two electrons in the antibonding orbital, resulting in a bond order of zero and making the molecule unstable. This is why \ce{He2} does not exist under normal conditions.
+
+To figure out the bond order of a molecule, we can use the formula:
+\begin{equation}\label{eq:bondOrder}
+    \text{Bond Order} = \frac{1}{2} \times (\ce{e-}_\text{bonding} - \ce{e-}_\text{antibonding})
+\end{equation}
+\begin{figure}[h]
+    \centering
+    \begin{modiagram}[style=square,labels,names,AO-width=8pt,labels-fs=\footnotesize]
+        \atom[\ce{O_a}]{left}{
+            1s, 2s, 2p = {;pair,up,up}
+        }
+        \atom[\ce{O_b}]{right}{
+            1s, 2s, 2p = {;pair,up,up}
+        }
+        \molecule[\ce{O2}]{
+            1sMO, 2sMO, 2pMO = {;pair,pair,pair,up,up},
+            color = { 2piy*=red, 2piz*=red }
+        }
+        \EnergyAxis
+    \end{modiagram}
+    \caption{Molecular orbital diagram of \ce{O2}.}
+\end{figure}
